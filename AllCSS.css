@@ -1,0 +1,349 @@
+@highlight-color: #8DCE19;
+
+@primary-link-color: #3473AC;
+@primary-link-color-visited: #3473AC;
+@primary-link-color-hover: lighten(desaturate(#3473AC, 95%), 13%);
+@primary-link-color-active: lighten(desaturate(#3473AC, 95%), 13%);
+@primary-link-color-focus: lighten(desaturate(#3473AC, 95%), 13%);
+
+@secondary-link-color: lighten(@primary-font-color, 60%);
+@secondary-link-color-visited: lighten(@primary-font-color, 60%);
+@secondary-link-color-hover: #3473AC;
+@secondary-link-color-active: #3473AC;
+
+/*Safari Background Rule*/
+
+.columbia-browser-safari .mt-custom-home
+{
+ background: url(https://nelnet-dev.mindtouch.us/@api/deki/files/647/banner-grads2.jpg);
+background-size: cover;
+}
+
+
+.elm-header-user-nav { background: #1f496b !important; }
+.elm-header-global-nav {background: #ffffff}
+
+@h1-color: #3473AC;
+
+.mt-splash-container {
+    background: url(/@api/deki/files/647/banner-grads2.jpg?origin=mt-web);
+    background-repeat: repeat;
+    background-size: 100% auto;
+}
+blockquote {
+    margin: .5em;
+    padding: .25em;
+}
+
+.mt-version-indicator {
+    padding:2px;
+    background:#efefef;
+    overflow:hidden;
+    font-size:11px;
+    border:1px solid #ccc;
+    border-radius:3px;
+}
+.mt-version-indicator span {
+    float:left;
+    dipslay:block;
+    margin-right:20px;
+}
+.mt-version-indicator .version-text {
+    font-weight:bold;
+}
+
+/* Update glyph code for article icon */
+.mt-icon-article-topic:before {
+    content: '\e70b';
+}
+.mt-icon-article-topic-video:before {
+    content: '\e8b0';
+}
+
+#mt-toc-container {
+    background: #FFF;
+    border: none;
+    /*border: 1px solid #000000;*/
+    color: #000000;
+    margin-left: 30px;
+}
+
+/* TOC Header */
+.ui-widget button.mt-toggle, .ui-widget button.mt-toggle:visited, button.mt-toggle, button.mt-toggle:visited {
+    color: #1F496B;
+}
+
+/* Removes numbers from before TOC */
+#mt-toc-container li:before{
+    display: none;
+}
+
+.ui-widget button.mt-toggle, .ui-widget button.mt-toggle:visited, button.mt-toggle, button.mt-toggle:visited {
+    color: #1F496B;
+}
+
+.ui-widget button.mt-toggle, .ui-widget button.mt-toggle, button.mt-toggle, button.mt-toggle {
+    color: #1F496B;
+}
+
+#mt-toc-container a, #mt-toc-container a:visited, .no-touch .ui-widget button.mt-toggle:hover, .no-touch button.mt-toggle:hover, .ui-widget button.mt-toggle:active, .ui-widget button.mt-toggle:focus, button.mt-toggle:active, button.mt-toggle:focus {
+    color: #3473AC;
+}
+
+/*Collapse*/
+fieldset#mt-classification-settings {
+    display: none;
+}
+
+.mt-guide-tab-settings.mt-toggle-container.mt-guide-tabs-settings-area .mt-toggle-expand:before {
+    content: '\e892';
+}
+
+.mt-guide-tab-settings.mt-toggle-container.mt-guide-tabs-settings-area .mt-toggle-collapse:before {
+        content: '\e893';
+}
+
+.ui-button-icon, a {
+    color: #8dce19;
+    text-decoration: none;
+}
+
+/* Guide button when someone has visited */
+.ui-button-icon, a:visited {
+    color: #3473AC;
+    text-decoration: none;
+}
+
+/* Guide button when no one has visited */
+.ui-button-icon, a {
+    color: #3473AC;
+    text-decoration: none;
+}
+
+/* For unordered lists icon. Options: disc, cirlce, square (personal image can be createdto change colors, otherwise
+* changing color changes the text in the list too.)
+*/
+ul {
+    list-style: square;
+}
+
+/* Icons */
+
+.note-blank {
+    background-image: url(/@api/deki/files/404/NoteIcon.png?origin=mt-web);
+}
+
+.important {
+    background-image: url(/@api/deki/files/409/Notes_Caution_icon.png?origin=mt-web);
+}
+
+.tip {
+    background-image: url(/@api/deki/files/606/Tip_icon.png?origin=mt-web);
+}
+
+.important, .note-blank, .tip {
+    overflow: hidden;
+    border-radius: 6px;
+    padding: 20px 20px 20px 70px;
+    margin: 20px 0;
+    background-repeat: no-repeat;
+    background-position: 20px 20px!important;
+    background-size: 35px;
+    min-height: 30px;
+}
+
+.note-blank {
+    background-color: #FFFFFF;
+    border: 1px solid #8A8C8E;
+}
+
+.important {
+    background-color: #F9F9F9;
+    filter: alpha(opacity=60); 
+    border: 1px solid #8DCE19;
+}
+
+.tip {
+    background-color: #FFFFFF;
+    border: 1px solid #8A8C8E;
+}
+
+/* Conditionalized text and images */
+.mt-style-conditional {
+    h1, h2, h3, h4, h5, h6, li, p{
+          color: #B74E29;
+    }
+    body.cke_editable hr, hr, .note-blank, .important, .tip{
+        border: 1px solid #B74E29!important;
+    }
+    color: #B74E29;
+    img {
+        border: 3px solid #B74E29!important;
+    }
+}
+
+div {
+    display: block;
+}
+
+h6 {
+    font-weight: lighter!important;
+}
+
+/* Back to Top button*/
+.mt-icon-back-to-top{
+    position: fixed;
+    display: inline-block;
+    padding: 4px 10px 10px 10px;
+    bottom: 20px;
+    right: 0px;
+    z-index: 100;
+    background: #1F496B;
+    font-weight: bold;
+    visibility: hidden;
+    color:#fff !important;
+    line-height:1.2;
+}
+       .mt-icon-back-to-top.move {
+        right: 0;
+        visibility: visible;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+
+    .mt-icon-back-to-top.back {
+        right: -200px;
+        visibility: hidden;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+
+/*Back to to on every Learning Path*/
+ .columbia-learning-path .elm-meta-article-navigation .elm-back-to-top{
+display:block;
+}
+
+/*Hide Search Question Mark*/
+.mt-content-container #pageText a.mt-f1-success.mt-f1-link.mt-icon-f1-link.mt-f1-search.link-https {
+    display: none;
+}
+
+/*Hide Powered by Mindtouch*/
+footer.elm-footer nav.elm-footer-siteinfo-nav.elm-nav ol li.elm-footer-powered-by {
+    display: none;
+}
+
+a.mtf1-dialog-poweredby {
+    display: none !important;
+}
+
+/*Hide Filters based on Account Type*/
+body.elm-user-pro-member .mt-field.mt-classification-filter-section.mt-classification-section-owner, body.elm-user-pro-member .mt-field.mt-classification-filter-section.mt-classification-section-stage, body.elm-user-pro-member .mt-field.mt-classification-filter-section.mt-classification-section-article {
+    display: none;
+}
+
+body.elm-user-pro-member.columbia-group-pro-admin .mt-field.mt-classification-filter-section.mt-classification-section-owner, body.elm-user-pro-member.columbia-group-pro-admin .mt-field.mt-classification-filter-section.mt-classification-section-stage, body.elm-user-pro-member.columbia-group-pro-admin .mt-field.mt-classification-filter-section.mt-classification-section-article {
+    display: block;
+}
+
+/*Search Results Arrow*/
+.mt-classification-filter-toggle-container button.ui-button-icon.mt-icon-reveal.mt-classification-filter-toggle {
+    width: 100%;
+    height: 100%;
+transition-duration: .2s;
+}
+
+.mt-classification-filter-toggle-container .mt-icon-reveal:before {
+    content: '\e8e9';
+    font-size: 2em;
+}
+
+.mt-classification-filter-toggle-container.mt-classification-filter-open  button.ui-button-icon.mt-icon-reveal.mt-classification-filter-toggle {
+    transform: rotate(180deg);
+}
+
+/*Remove Powered by Mindtouch*/
+a.mtf1-dialog-poweredby {
+    display: none !important;
+}
+
+/* Search Filter Results */
+.mt-help-breadcrumb-container {
+    font-size: 1.15em;
+}
+
+.mt-help-breadcrumb-label {
+    font-weight: normal;
+margin-right: .3em
+}
+
+/*Hide Article Type*/
+.mt-guide-tab-settings.mt-toggle-container.mt-guide-tabs-settings-area + h5.mt-classification-heading {
+    display: none;
+}
+
+.mt-carousel-helper-text {
+    font-weight: bold;
+}
+
+/*.mt-help-breadcrumb-container.mt-search-breadcrumb-widget .mt-carousel-helper-text {
+    display: block;
+    margin-left: 0;
+    padding-top: 10px;
+} */
+
+/*Help For Text*/
+#mt-search-container #UserSupport h1.mt-help-header {
+    font-size: 2em;
+}
+
+/*Hide Feedback on Search*/
+.mt-help-button-container {
+    display: none;
+}
+
+/*Hide Topic and Category for Non-Admin*/
+body.elm-user-pro-member.columbia-article-topic-guide li.elm-last-modified, body.elm-user-pro-member.columbia-article-topic-guide li.elm-page-restriction, body.elm-user-pro-member.columbia-article-topic-category li.elm-last-modified, body.elm-user-pro-member.columbia-article-topic-category li.elm-page-restriction, body.columbia-group-school-users.columbia-article-topic-guide li.elm-last-modified, body.columbia-group-school-users.columbia-article-topic-guide li.elm-page-restriction, body.columbia-group-school-users.columbia-article-topic-category li.elm-last-modified, body.columbia-group-school-users.columbia-article-topic-category li.elm-page-restriction {
+    display: none;
+}
+
+body.elm-user-pro-member.columbia-article-topic-guide.columbia-group-pro-admin li.elm-last-modified, body.elm-user-pro-member.columbia-article-topic-guide.columbia-group-pro-admin li.elm-page-restriction, body.elm-user-pro-member.columbia-article-topic-category.columbia-group-pro-admin li.elm-last-modified, body.elm-user-pro-member.columbia-article-topic-category.columbia-group-pro-admin li.elm-page-restriction  {
+    display: block;
+}
+
+#user-history-top-control {
+opacity:1;
+}
+
+
+#user-history-top-control a, #user-history-top-control a:visited{
+    color: #3473ac;
+}
+
+.elm-header-user-nav a, .elm-header-user-nav a:visited {
+    color: #fff;
+}
+
+.mt-dropdown a:visited {
+    color: #999;
+}
+
+/* Add export button to Page Classification Manager */
+#mt-structuredtags-export-button {
+    display: block;
+}
+
+/* Add feedback to video type articles*/
+.columbia-article-topic-video .mt-feedback-rating-container {
+     display: block;
+}
+
+/* Hides attachments for pro-viewers*/
+body.elm-user-pro-member.columbia-group-pro-viewer .elm-attachments{
+display: none;
+}
