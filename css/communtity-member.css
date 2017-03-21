@@ -1,0 +1,17 @@
+﻿.elm-meta-bottom {
+     display: none;
+}
+
+/* Removes Stage, Owner, and Target Audience classification from search page */
+.mt-classification-section-stage, .mt-classification-section-owner, .mt-classification-section-targetaudience{
+    display: none;
+}
+
+/*hides the cog icon for user preferences*/
+a.mt-icon-user-preferences {
+    Display: none !important;
+}
+
+section#attachments {
+    display: none;
+}
