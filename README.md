@@ -1,1 +1,1 @@
-Enter your CSS for the Dev Site in the appropriate files.
+Enter your code for the Dev Site in the appropriate files.
