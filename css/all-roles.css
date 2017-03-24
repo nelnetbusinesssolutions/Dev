@@ -1,5 +1,4 @@
 @highlight-color: #8DCE19;
-
 @primary-link-color: #3473AC;
 @primary-link-color-visited: #3473AC;
 @primary-link-color-hover: lighten(desaturate(#3473AC, 95%), 13%);
