@@ -1,13 +1,10 @@
 ﻿@highlight-color: #8DCE19;
 
-
 /*Safari Background Picture*/
-
 .columbia-browser-safari .mt-custom-home {
     background: url(https://nelnet-dev.mindtouch.us/@api/deki/files/647/banner-grads2.jpg);
     background-size: cover;
 }
-
 
 .elm-header {
     background: #fff;
@@ -72,6 +69,10 @@ h6 {
     }
 
 /* Update glyph code for article icon */
+.mt-icon-article-topic:before {
+    content: '\e70b';
+}
+
 .mt-icon-article-topic-video:before {
     content: '\e8b0';
 }
@@ -204,6 +205,10 @@ color: #B74E29; img {
 
 div {
     display: block;
+}
+
+h6 {
+    font-weight: lighter !important;
 }
 
 /* Back to Top button*/
