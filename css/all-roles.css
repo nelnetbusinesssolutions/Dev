@@ -48,6 +48,10 @@ blockquote {
     padding: .25em;
 }
 
+h6 {
+    font-weight: lighter !important;
+}
+
 .mt-version-indicator {
     padding: 2px;
     background: #efefef;
@@ -68,10 +72,6 @@ blockquote {
     }
 
 /* Update glyph code for article icon */
-.mt-icon-article-topic:before {
-    content: '\e70b';
-}
-
 .mt-icon-article-topic-video:before {
     content: '\e8b0';
 }
@@ -204,10 +204,6 @@ color: #B74E29; img {
 
 div {
     display: block;
-}
-
-h6 {
-    font-weight: lighter !important;
 }
 
 /* Back to Top button*/
