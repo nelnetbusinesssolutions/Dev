@@ -121,13 +121,6 @@ fieldset#mt-classification-settings {
     text-decoration: none;
 }
 
-/* For unordered lists icon. Options: disc, cirlce, square (personal image can be createdto change colors, otherwise
-* changing color changes the text in the list too.)
-*/
-ul {
-    list-style: square;
-}
-
 /* Icons */
 
 .note-blank {
