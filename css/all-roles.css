@@ -184,11 +184,7 @@ div {
     display: block;
 }
 
-h6 {
-    font-weight: lighter !important;
-}
-
-/* Back to Top button*/
+/*Back to Top button*/
 .mt-icon-back-to-top {
     position: fixed;
     display: inline-block;
