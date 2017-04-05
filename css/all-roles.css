@@ -173,7 +173,6 @@ h1.mt-style-conditional, h2.mt-style-conditional, h3.mt-style-conditional, h4.mt
 
 body.cke_editable hr, hr, .note-blank, .important, .tip {
     border: 1px solid #B74E29 !important;
-    color: #B74E29;
 }
 
 img {
@@ -197,6 +196,7 @@ div {
     visibility: hidden;
     color: #fff !important;
     line-height: 1.2;
+    font-size: 100%;
 }
 
     .mt-icon-back-to-top.move {
@@ -231,10 +231,6 @@ div {
 /*Hide Powered by Mindtouch*/
 footer.elm-footer nav.elm-footer-siteinfo-nav.elm-nav ol li.elm-footer-powered-by {
     display: none;
-}
-
-a.mtf1-dialog-poweredby {
-    display: none !important;
 }
 
 /*Hide Filters based on Account Type*/
