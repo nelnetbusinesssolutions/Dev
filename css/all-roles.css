@@ -258,11 +258,6 @@ body.elm-user-pro-member.columbia-group-pro-admin .mt-field.mt-classification-fi
     transform: rotate(180deg);
 }
 
-/*Remove Powered by Mindtouch*/
-a.mtf1-dialog-poweredby {
-    display: none !important;
-}
-
 /* Search Filter Results */
 .mt-help-breadcrumb-container {
     font-size: 1.15em;
