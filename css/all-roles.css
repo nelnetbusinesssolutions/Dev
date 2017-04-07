@@ -306,10 +306,21 @@ body.elm-user-pro-member.columbia-article-topic-guide.columbia-group-pro-admin l
     opacity: 1;
 }
 
-
     #user-history-top-control a, #user-history-top-control a:visited {
         color: #3473ac;
     }
+
+    #user-history-top-control #user-history-uparrow {
+        line-height: 1.2;
+    }
+
+.elm-meta-article-navigation {
+    font-size: 100%;
+}
+
+.no-touch .ui-state-hover a:hover, .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited, .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, .ui-state-error a, .ui-state-highlight a, .ui-state-hover a, .ui-state-hover a:link, .ui-state-hover a:visited, .ui-widget-content .ui-state-error a, .ui-widget-content .ui-state-highlight a, .ui-widget-content a, .ui-widget-header .ui-state-error a, .ui-widget-header .ui-state-highlight a, .ui-widget-header a {
+    color: #3473AC;
+}
 
 .elm-header-user-nav a, .elm-header-user-nav a:visited {
     color: #fff;
