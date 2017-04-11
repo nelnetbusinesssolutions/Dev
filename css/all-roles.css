@@ -171,13 +171,17 @@ h1.mt-style-conditional, h2.mt-style-conditional, h3.mt-style-conditional, h4.mt
     color: #B74E29;
 }
 
-body.cke_editable hr, hr, .note-blank, .important, .tip {
+body.cke_editable hr.mt-style-conditional, hr.mt-style-conditional, .note-blank.mt-style-conditional, .important.mt-style-conditional, .tip.mt-style-conditional {
     border: 1px solid #B74E29 !important;
 }
 
-img {
+img.mt-style-conditional {
     border: 3px solid #B74E29 !important;
 }
+
+/*img {
+    border: 3px solid #B74E29 !important;
+}*/
 
 div {
     display: block;
