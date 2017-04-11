@@ -167,15 +167,15 @@ fieldset#mt-classification-settings {
     color: #B74E29;
 }
 
-h1.mt-style-conditional, h2.mt-style-conditional, h3.mt-style-conditional, h4.mt-style-conditional, h5.mt-style-conditional, h6.mt-style-conditional, li.mt-style-conditional, p.mt-style-conditional {
+.mt-style-conditional h1,.mt-style-conditional h2, .mt-style-conditional h3, .mt-style-conditional h4, .mt-style-conditional h5, .mt-style-conditional h6, .mt-style-conditional li, .mt-style-conditional p {
     color: #B74E29;
 }
 
-body.cke_editable hr.mt-style-conditional, hr.mt-style-conditional, .note-blank.mt-style-conditional, .important.mt-style-conditional, .tip.mt-style-conditional {
+body.cke_editable .mt-style-conditional hr, .mt-style-conditional hr, .mt-style-conditional .note-blank, .mt-style-conditional .important, .tip.mt-style-conditional {
     border: 1px solid #B74E29 !important;
 }
 
-img.mt-style-conditional {
+.mt-style-conditional img {
     border: 3px solid #B74E29 !important;
 }
 
