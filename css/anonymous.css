@@ -1,4 +1,4 @@
-﻿/*Removes search bar from login screen */
+/*Removes search bar from login screen */
 .elm-header-user-nav {
 display: none;
 }
