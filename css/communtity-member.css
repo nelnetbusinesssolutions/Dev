@@ -1,4 +1,4 @@
-﻿.elm-meta-bottom {
+.elm-meta-bottom {
      display: none;
 }
 
@@ -7,11 +7,22 @@
     display: none;
 }
 
+@media screen and (min-width: 50em) {
+    .mt-classification-filter .mt-field {
+        width: 33.33%;
+    }
+}
+
 /*hides the cog icon for user preferences*/
 a.mt-icon-user-preferences {
     Display: none !important;
 }
 
 section#attachments {
+    display: none;
+}
+
+/* Hides attachments for pro-viewers*/
+body.elm-user-pro-member.columbia-group-pro-viewer .elm-attachments .a.mt-icon-page-options.mt-dropdown-link, body.elm-user-pro-member.columbia-group-pro-viewer .elm-attachments a.mt-icon-site-tools.mt-dropdown-link{
     display: none;
 }
