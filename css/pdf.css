@@ -1,20 +1,22 @@
-/*pdf css here*/
-table, table td, table th {width: auto !important}
-
 /* common/prince.css */
 
 /* BODY */
 @page {
+
     size: US-Letter;
     margin: 0.85in 0.55in .55in 0.55in;
 
-   @top-left{
+    @top-left {
+        
         vertical-align: bottom;
+        border-bottom: 1px solid #ccc;
         padding-bottom: 5px;
         margin-bottom: 10px;
-        content:'\A9 Copyright 2018 Nelnet Business Solutions, Inc.';
+    }
+
+    @top-center {
+        content: '';
         border-bottom: 1px solid #ccc;
-        width: 100%;     
     }
 
     @bottom-right-corner {
@@ -23,6 +25,7 @@ table, table td, table th {width: auto !important}
         font-size: 13px;
        margin: 0;
     }
+
 }
 body {
     color: #000;
@@ -67,7 +70,6 @@ img[style], img {
 }
 
 /* footer */
-
 
 /* CONTENT */
 
@@ -437,6 +439,15 @@ span:empty {
 
 /* tables */
 
+
+/*table, table td, table th {width: auto !important}*/
+
+
+
+
+
+
+
 /*CSS FROM DAVID*/
 table, th, td {
    border: 1px solid black;
@@ -446,26 +457,69 @@ table {
     border-style: solid;
     margin-bottom: 12px;
     max-width: 7in;
-    table-layout: fixed;
+    table-layout: fixed !important;
+    width:auto !important;
+    border-collapse: collapse;
 }
+
+    table td {
+        /*max-width:20px;*/
+        word-wrap:break-word;
+        color:#000;
+        /*overflow:hidden;*/
+    }
+
+
 table th,
 table td {
     padding: 8px;
     text-align: left;
 }
+
+    table.hh-many {
+        width:100% !important;
+    }
+
+    table.hh-many th, table.hh-many td:first-child {
+        font-size:8.5px;
+        word-wrap: break-word;
+            table-layout: fixed;
+            max-width:100%;   
+    border-collapse: collapse;
+    }
+
+
+    table.hh-long-string {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+ max-width: 100%;
+}
+
+    table.hh-long-string td {
+        /*width: 100px;*/
+        word-wrap: break-word;
+    }
+    table td {
+        word-wrap: break-word !important;
+    }
+
 .table {
     border: 1px solid #aaa;
     border-collapse: collapse;
-    table-layout: fixed;
+    width:100%;
 }
 .table th {
     background: #d9d9d9;
     border: 1px solid #aaa;
-    color: #333;
+    /*color: #333;*/
+    color:red;
 }
 .table td {
     color: #333;
     border: 1px solid #aaa;
+        word-wrap:break-word;
+        /*overflow:hidden;*/
 }
 div.table {
     border: 0;
@@ -508,11 +562,11 @@ dd {
 /*notes and important notices*/
 
 .note-blank {
-    background-image: url(/@api/deki/files/404/NoteIcon.png?origin=mt-web);
+    background-image: url(/@api/deki/files/577/NoteIcon.png?origin=mt-web);
 }
 
 .important {
-    background-image: url(/@api/deki/files/409/Notes_Caution_icon.png?origin=mt-web);
+    background-image: url(/@api/deki/files/583/Notes_Caution_icon.png?origin=mt-web);
 }
 
 .important {
@@ -538,7 +592,7 @@ dd {
     background-position: 15px 10px!important;
     border: 1px solid #8A8C8E;
     min-height: 30px;
-}
+} 
 
 ul.checkbox-list li:before
 {
