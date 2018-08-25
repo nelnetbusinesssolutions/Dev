@@ -3,7 +3,7 @@ body.columbia-learning-path .elm-related-articles-container {
 }
 
 
-@highlight-color: #8DCE19;
+@highlight-color: #7fc041;
 
 /*Fixing Search Fields*/
 .mt-field.mt-classification-filter-section {
@@ -26,7 +26,8 @@ body.elm-user-pro-member.columbia-group-pro-admin .mt-field.mt-classification-fi
 
 body.elm-user-community .mt-field.mt-classification-filter-section.mt-classification-section-owner,
 body.elm-user-community .mt-field.mt-classification-filter-section.mt-classification-section-targetaudience,
-body.elm-user-community .mt-field.mt-classification-filter-section.mt-classification-section-stage {
+body.elm-user-community .mt-field.mt-classification-filter-section.mt-classification-section-stage,
+body.elm-user-community .mt-field.mt-classification-filter-section.mt-classification-section-year {
     display: none;
 }
 
@@ -215,34 +216,16 @@ h6 {
     content: '\e8b0';
 }
 
-#mt-toc-container {
-    background: #FFF;
-    /*border: none;*/
-    border: 1px solid #000000;
-    color: #000000;
-    margin-left: 30px;
-    width: 30%;
-}
-
-@media screen and (max-width:600px) {
-    #mt-toc-container {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 90%;
-        float: inherit;
-    }
-}
 
 /* TOC Header */
 .ui-widget button.mt-toggle, .ui-widget button.mt-toggle:visited, button.mt-toggle, button.mt-toggle:visited {
     color: #1F496B;
 }
 
-    /* TOC text */
-    #mt-toc-container a, #mt-toc-container a:visited, .no-touch .ui-widget button.mt-toggle:hover, .no-touch button.mt-toggle:hover, .ui-widget button.mt-toggle:active, .ui-widget button.mt-toggle:focus, button.mt-toggle:active, button.mt-toggle:focus {
-        color: #3473AC;
-    }
+   /* TOC text */
+   #mt-toc-container a, #mt-toc-container a:visited, .no-touch .ui-widget button.mt-toggle:hover, .no-touch button.mt-toggle:hover, .ui-widget button.mt-toggle:active, .ui-widget button.mt-toggle:focus, button.mt-toggle:active, button.mt-toggle:focus {
+       color: #3473AC;
+   }
 
 /* Removes numbers from before TOC */
 #mt-toc-container li:before {
@@ -492,9 +475,9 @@ body.elm-user-pro-member.columbia-article-topic-guide.columbia-group-pro-admin l
     color: #fff;
 }
 
-.mt-dropdown a:visited {
+/*.mt-dropdown a:visited {
     color: #999;
-}
+}*/
 
 /* Add export button to Page Classification Manager */
 #mt-structuredtags-export-button {
@@ -562,11 +545,14 @@ body.elm-user-pro-member.columbia-group-pro-admin .mt-new-features-container {
     content: '\e613';
 }
 
-.mt-category-container a.mt-sortable-listing-link.mt-edit-section.internal {
+/*article.elm-content-container section.mt-content-container dl.mt-listing-detailed dt.mt-listing-detailed-title a*/
+
+.mt-category-container a.mt-sortable-listing-link.mt-edit-section.internal, article.elm-content-container section.mt-content-container dl.mt-listing-detailed dt.mt-listing-detailed-title a, article.elm-content-container section.mt-content-container dl.mt-listing-detailed dd.mt-listing-detailed-subpages ul li a, article.elm-content-container section.mt-content-container dl.mt-listing-detailed dd.mt-listing-detailed-subpages ul li a:visited,  .mt-category-container a.mt-sortable-listing-link.mt-edit-section:visited, article.elm-content-container section.mt-content-container dl.mt-listing-detailed dt.mt-listing-detailed-title a:visited {
     color: #094a64;
 }
 
-    .mt-category-container a.mt-sortable-listing-link.mt-edit-section.internal:hover {
+
+    .mt-category-container a.mt-sortable-listing-link.mt-edit-section:hover, .mt-category-container a.mt-sortable-listing-link.mt-edit-section:active, article.elm-content-container section.mt-content-container dl.mt-listing-detailed dt.mt-listing-detailed-title a:hover, article.elm-content-container section.mt-content-container dl.mt-listing-detailed dt.mt-listing-detailed-title a:active, article.elm-content-container section.mt-content-container dl.mt-listing-detailed dd.mt-listing-detailed-subpages ul li a:hover, article.elm-content-container section.mt-content-container dl.mt-listing-detailed dd.mt-listing-detailed-subpages ul li a:active, article.elm-content-container section.mt-content-container dl.mt-listing-detailed dd.mt-listing-detailed-subpages ul li a:focus {
         color: #52c5ce;
     }
 
@@ -578,3 +564,486 @@ body.elm-user-pro-member.columbia-group-pro-admin .mt-new-features-container {
 body.elm-user-pro-member.columbia-group-pro-viewer li.mt-site-tools, body.elm-user-pro-member.columbia-group-pro-viewer li.mt-page-options, body.elm-user-pro-member.columbia-group-pro-draft li.mt-site-tools, body.elm-user-pro-member.columbia-group-pro-draft li.mt-page-options {
     display: none;
 }
+
+
+aside#mt-toc-container {
+    /*background-color: #7cbc41;
+    border: 2px solid #7CBC41;*/
+    background-color: #69A037;
+    border: 2px solid #69A037;
+}
+
+    aside#mt-toc-container button {
+        /*color: #1F496B;*/
+        color: #fff;
+    }
+
+
+        aside#mt-toc-container button:hover/*, aside#mt-toc-container.hh-collapsed button:hover*/  {
+        /*color: #3473AC;*/
+        color:#fff;
+    }
+
+    aside#mt-toc-container.hh-collapsed {
+        background-color: #fff;
+    }
+
+        aside#mt-toc-container.hh-collapsed button {
+            color: #1F496B;
+            /*color:#7fc041;*/
+        }
+                aside#mt-toc-container.hh-collapsed button:hover {
+            /*color: #3473AC;*/
+            color:#52c5ce;
+        }
+
+    article.elm-content-container aside#mt-toc-container nav ol li a:hover {
+        /*color: #7CBC42;*/
+        /*color: #7fc041;*/
+          color: #52c5ce;
+    }
+
+
+
+/*.mt-style-conditional dd {
+	color: #B74E29;
+}*/
+
+/*Learning Path Description Conditional Text*/
+.mt-style-conditional .mt-listing-detailed-overview { 
+    color: #B74E29;
+}
+.mt-style-conditional dl.mt-listing-detailed dd.mt-listing-detailed-overview:hover { 
+    color: #B74E29;
+}
+
+
+/*New Icon Look*/
+body.elm-user-pro-member .mt-sortable-listing, .mt-sortable-listing, .no-touch .mt-sortable-listing, body.elm-user-pro-member .mt-sortable-listing:active, .mt-sortable-listing:active, body.elm-user-pro-member .mt-sortable-listing:focus, .mt-sortable-listing:focus {
+    border: none;
+    box-sizing: inherit;
+    border-radius: 0;
+}
+
+    body.elm-user-pro-member .mt-sortable-listing:hover, .mt-sortable-listing:hover, .no-touch .mt-sortable-listing:hover, body.elm-user-pro-member .mt-sortable-listing:focus, .mt-sortable-listing:focus, .mt-category-container a.mt-sortable-listing-link.mt-edit-section.internal:focus  {
+     box-shadow: none;
+     color:#52c5ce;
+}
+
+dl dt.mt-listing-detailed-title a:hover, dl dt.mt-listing-detailed-title a:focus {
+color:#52c5ce;
+}
+
+
+dl dd.mt-listing-detailed-overview:hover {
+    color:#000;
+}
+
+/*body.elm-user-pro-member .live-tag-entry a {
+    color:#59882d;
+}*/
+
+
+/*Dropdown Options*/
+body main header nav ol.mt-user-menu-container.mt-dropdown a, body main header nav ol.mt-user-menu-container.mt-dropdown a:visited {
+color: #094a64;
+}
+
+body main header nav ol.mt-dropdown.mt-user-menu-container a:hover {
+    color:#7fc041;
+}
+
+/*.elm-user-pro-member .mt-dropdown a, .mt-dropdown a, .elm-user-pro-member .mt-dropdown a:visited, .mt-dropdown a:visited {
+    color: #094a64;
+}*/
+.no-touch .ui-button-icon:hover, .no-touch a:hover, .ui-button-icon:active, a:active {
+    color: #7fc041;
+}
+
+/*Thumbnail width and Mobile friendliness*/
+.mt-page-summary .mt-page-thumbnail img {
+    max-height: 100px;
+}
+
+@media screen and (max-width:599px) {
+    .mt-page-summary .mt-page-thumbnail img {
+    display:none;
+}
+}
+
+/*.mt-feedback-rating-controls .ui-button-icon {
+    color: #3473ac;
+}*/
+
+/*Feedback Button Color Changes*/
+.mt-rating-button-no.mt-icon-rating-no, .mt-rating-button-yes.mt-icon-rating-yes, .mt-feedback-button.mt-icon-leave-feedback {
+   color: #094a64;
+}
+
+.mt-feedback-rating-controls .mt-rating-button-no.mt-selected, .mt-feedback-rating-controls .mt-rating-button-no.ui-button-icon:active, .mt-feedback-rating-controls .mt-rating-button-no.ui-button-icon:focus, .no-touch .mt-feedback-rating-controls .mt-rating-button-no.ui-button-icon:hover {
+   color:#7fc041;
+}
+
+.mt-feedback-rating-controls .mt-rating-button-yes.mt-selected, .mt-feedback-rating-controls .mt-rating-button-yes.ui-button-icon:active, .mt-feedback-rating-controls .mt-rating-button-yes.ui-button-icon:focus, .no-touch .mt-feedback-rating-controls .mt-rating-button-yes.ui-button-icon:hover {
+      color: #7fc041;
+}
+
+.elm-footer-custom .nbs-footer .links li {
+font-weight:bold;
+}
+
+header.elm-header nav.header-links {
+    font-weight: bold;
+}
+
+/*PDF & Subscription color change*/
+.elm-page-notifications .mt-icon-page-notification, .elm-page-notifications .mt-icon-page-notification:active, .elm-page-notifications .mt-icon-page-notification:visited, .elm-page-notifications .mt-icon-page-notification.off:visited:visited {
+    color: #094a64 !important;
+}
+.elm-pdf-export .mt-icon-article-pdf, .elm-pdf-export .mt-icon-article-pdf:active .elm-pdf-export .mt-icon-article-pdf:visited, .elm-pdf-export .mt-icon-article-pdf:focus {
+    color: #094a64;
+}
+.elm-pdf-export .mt-icon-article-pdf:hover {
+    color: #52c5ce !important;
+}
+
+/*.no-touch .elm-pdf-export .mt-icon-article-pdf:hover {
+color:#094a64;
+}*/
+
+.elm-page-notifications .mt-icon-page-notification:hover,.elm-page-notifications .mt-icon-page-notification.off:hover {
+    color: #52c5ce !important;
+}
+
+/*Color change for Next/Previous links*/
+footer ol.elm-meta-data ul.mt-article-pagination li a, footer ol.elm-meta-data ul.mt-article-pagination li a span, footer ol.elm-meta-data ul.mt-article-pagination li a.mt-icon-next-article span,footer ol.elm-meta-data ul.mt-article-pagination li a:hover, footer ol.elm-meta-data ul.mt-article-pagination li a span:hover, footer ol.elm-meta-data ul.mt-article-pagination li a:visited, footer ol.elm-meta-data ul.mt-article-pagination li a span:visited {
+   color: #3473AC;
+}
+
+footer ol.elm-meta-data ul.mt-article-pagination li a:hover, footer ol.elm-meta-data ul.mt-article-pagination li a span:hover {
+   color: #52c5ce;
+}
+
+/*Color change for Next/Previous Links on Learning Paths*/
+   ul.mt-article-pagination li a, ul.mt-article-pagination li a span, ul.mt-article-pagination li a:visited, ul.mt-article-pagination li a span:visited {
+       color: #3473AC;
+   }
+
+   ul.mt-article-pagination li a:hover, ul.mt-article-pagination li a:active, ul.mt-article-pagination li a span:hover, ul.mt-article-pagination li a span:active {
+   color: #52c5ce;
+}
+
+ul.mt-article-pagination li a.mt-disabled span, ul.mt-article-pagination li a.mt-disabled{
+   color:#a7a7a7 !important;
+}
+
+/*Bolding TOC links and changing hover activity*/
+aside#mt-toc-container .mt-toc-content ol a {
+   /* font-weight:bold; */
+}
+
+aside#mt-toc-container .mt-toc-content ol li a:hover, aside#mt-toc-container .mt-toc-content ol li a:active, aside#mt-toc-container .mt-toc-content ol li a:focus {
+   color: #52c5ce;
+}
+
+/*Breadcrumbs color change*/
+nav.elm-header-global-nav ol.mt-breadcrumbs li a, nav.elm-header-global-nav ol.mt-breadcrumbs li:after, nav.elm-header-global-nav ol.mt-breadcrumbs li a span, nav.elm-header-global-nav button.elm-hierarchy-trigger {
+    color:#094a64;
+}
+
+nav.elm-header-global-nav ol.mt-breadcrumbs li a:hover, nav.elm-header-global-nav ol.mt-breadcrumbs li a:hover span, nav.elm-header-global-nav ol.mt-breadcrumbs li a span:hover, nav.elm-header-global-nav button.elm-hierarchy-trigger:hover{
+    color:#52c5ce;
+}
+
+/*Changing color/behaviour of Expandable list*/
+dl.expand dt.expand{
+   color: #3473ac;
+}
+
+dl.expand dt.expand:hover{
+   color: #52c5ce;
+}
+
+/*Changing Classifaction colors for Pro Members only*/
+body.elm-user-pro-member ol.elm-meta-data li.elm-classifications dl.mt-classification dd a, body.elm-user-pro-member ol.elm-meta-data li.elm-classifications dl.mt-classification dd a:visited, body.elm-user-pro-member ol.elm-meta-data li.elm-tags ol li.mt-tag-link a:visited  {
+   color:#7fc041;
+}
+
+body.elm-user-pro-member ol.elm-meta-data li.elm-classifications dl.mt-classification dd a:hover, body.elm-user-pro-member ol.elm-meta-data li.elm-classifications dl.mt-classification dd a:active, body.elm-user-pro-member ol.elm-meta-data li.elm-tags ol li.mt-tag-link a:hover, body.elm-user-pro-member ol.elm-meta-data li.elm-tags ol li.mt-tag-link a:active{
+   color:#59882d;
+}
+
+/*Learning Path Title Links*/
+article.elm-content-container section.mt-content-container .mt-lp-path-container dl.mt-listing-detailed dt.mt-listing-detailed-title a, article.elm-content-container section.mt-content-container .mt-lp-path-container dl.mt-listing-detailed dt.mt-listing-detailed-title a:visited {
+    color:#3473ac;
+}
+
+article.elm-content-container section.mt-content-container .mt-lp-path-container dl.mt-listing-detailed dt.mt-listing-detailed-title a:hover, article.elm-content-container section.mt-content-container .mt-lp-path-container dl.mt-listing-detailed dt.mt-listing-detailed-title a:active {
+    color:#7fc041;
+}
+
+/*.mt-learningpath-widget .mt-toggle dl dt a, .mt-learningpath-widget .mt-toggle dl dt a:visited {
+    color:#3473ac;
+}
+
+.mt-learningpath-widget .mt-toggle dl dt a:hover, .mt-learningpath-widget .mt-toggle dl dt a:active {
+    color: #7FC041;
+}*/
+
+/*Links within Articles*/
+article.elm-content-container section.mt-content-container a {
+    color: #3473ac;
+}
+
+article.elm-content-container section.mt-content-container a:hover, article.elm-content-container section.mt-content-container a:active, article.elm-content-container section.mt-content-container a:hover:visited {
+    color: #52c5ce;
+}
+
+
+/*Catagory and Guide descriptions in Detailed View, Learning Path hover fix*/
+.mt-sortable-listing:hover, .no-touch .mt-sortable-listing:hover, body .mt-sortable-listing:focus, body .mt-sortable-listing:hover, body mt-sortable-listing.mt-sortable-lp-page:hover dd {
+    color:#000 !important;
+}
+
+/*Editor text revert to default/Editor Fixes*/
+.cke_menubar .cke_menubar_menuitem {
+    color: #444 !important;
+}
+
+.deki-content-edit a:hover {
+    color:#52c5ce;
+}
+
+
+/*Related/Recommended Articles Color Changes*/
+footer .elm-related-articles-container ol li a:hover, footer .elm-related-articles-container ol li a:active, footer .elm-related-articles-container ol li a:focus {
+    color:#7fc041;
+}
+
+
+
+
+
+
+
+
+/*CSS for Learning Path change*/
+.mt-lp-progress-container {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #deefcf;
+    /*background-color: #b13a69;*/
+}
+
+    .mt-lp-progress-container .mt-lp-progress-description {
+        color: #333;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+
+    .mt-lp-progress-container .mt-lp-progress-bar {
+        border-top: .2em solid #999;
+    }
+
+        .mt-lp-progress-container .mt-lp-progress-bar li {
+            top: -1em;
+            text-align: center;
+        }
+
+        .mt-lp-progress-container .mt-lp-progress-bar a {
+            display: block;
+            height: 2em;
+            overflow: hidden;
+            width: 2em;
+            color: transparent;
+        }
+
+
+        .mt-lp-progress-container .mt-lp-progress-bar .mt-lp-page-current a span:before {
+            background: #094a64;
+            border: .25em solid #094a64;
+        }
+
+        .mt-lp-progress-container .mt-lp-progress-bar li a span:before {
+            background: #fff;
+            border: .25em solid #094a64;
+            border-radius: 50%;
+            height: 1.8em;
+            width: 1.8em;
+        }
+
+
+        .mt-lp-progress-container .mt-lp-progress-bar li a:hover span:before, .mt-lp-progress-container .mt-lp-progress-bar li a span.j-border:before {
+            border: .25em solid #52c5ce;
+        }
+
+        .mt-lp-progress-container .mt-lp-progress-bar .mt-lp-page-previous a span:before {
+            background: #094a64;
+            border: .25em solid #094a64;
+        }
+
+
+        .mt-lp-progress-container .mt-lp-progress-bar .mt-lp-page-previous a:hover span:before, .mt-lp-progress-container .mt-lp-progress-bar .mt-lp-page-previous a span.j-border:before {
+            border: .25em solid #52c5ce;
+        }
+
+        .mt-lp-progress-container .mt-lp-progress-bar .number {
+            /* font-size: 1em; */
+            /* top: 20%; */
+            /* position: absolute; */
+            /* left: 20%; */
+            margin-top: -25px;
+            margin-left: -2px;
+        }
+
+        .mt-lp-progress-container .mt-lp-progress-bar li .number {
+            color: #094a64;
+        }
+
+        .mt-lp-progress-container .mt-lp-progress-bar .mt-lp-page-previous .number, .mt-lp-progress-container .mt-lp-progress-bar .mt-lp-page-current .number {
+            color: #fff;
+        }
+
+        .mt-lp-progress-container .mt-lp-progress-bar li:hover {
+            cursor: pointer;
+        }
+
+    .mt-lp-progress-container .mt-lp-path-title-display {
+        color: #333;
+        display: inline-block;
+        font-weight: 700;
+        padding-bottom: 15px;
+        font-size: 20px;
+        line-height: .1;
+    }
+
+    .mt-lp-progress-container .mt-article-pagination {
+        clear: none;
+        display: block;
+        float: left;
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .mt-lp-progress-container .desktop-verb, .mt-lp-progress-container .mobile-verb {
+        margin: 0;
+    }
+
+    .mt-lp-progress-container .desktop-verb {
+        padding-bottom: 25px;
+        color: #000;
+        font-size: 17px;
+    }
+
+    .mt-lp-progress-container .mobile-verb {
+        display: none;
+    }
+
+
+.mt-lp-progress-container ul.mt-article-pagination li a:hover, .mt-lp-progress-container ul.mt-article-pagination li a:hover span {
+    color: #094a64;
+}
+
+@media screen and (max-width:1279px) {
+    .mt-lp-progress-container .mt-lp-progress-bar .number {
+        margin-top: -22px;
+    }
+}
+
+
+@media screen and (max-width:700px) {
+    .mt-lp-progress-container .mt-lp-progress-bar {
+        border-top: .1em solid #999;
+    }
+
+        .mt-lp-progress-container .mt-lp-progress-bar .number {
+            display: none;
+        }
+
+        .mt-lp-progress-container .mt-lp-progress-bar li {
+            top: -.45em;
+        }
+
+        .mt-lp-progress-container .mt-lp-progress-bar a {
+            height: .9em;
+            width: .9em;
+        }
+
+        .mt-lp-progress-container .mt-lp-progress-bar li a span:before {
+            height: .5em;
+            width: .5em;
+        }
+
+    .mt-lp-progress-container .mt-lp-path-title-display {
+        font-size: inherit;
+    }
+
+    .mt-lp-progress-container .desktop-verb {
+        display: none;
+    }
+
+    .mt-lp-progress-container .mobile-verb {
+        font-size: 12px;
+        font-style: italic;
+        display: block;
+        padding-bottom: 20px;
+        color: #000;
+    }
+
+    .mt-lp-progress-container .mt-article-pagination {
+        font-size: inherit;
+    }
+}
+
+/*Revision History Button color fix*/
+.history-version-container a#page-history-diff-button {
+    color: #fff;
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+footer.elm-footer .nbs-footer .copyright-info p {
+margin-bottom: 0;
+padding-bottom: 5px;
+}
+}
+
+/*Site Map & Detailed View Fix*/
+dd.mt-listing-detailed-subpages ul li a span, dl.mt-listing-detailed dt a span, dl.mt-listing-detailed dd button.mt-icon-expand-collapse {
+    color: #094a64;
+}
+
+/*nav.elm-nav.elm-header-hierarchy .fancytree-title, nav.elm-nav.elm-header-hierarchy .fancytree-icon, nav.elm-nav.elm-header-hierarchy .fancytree-expander {
+color: #094a64;
+}*/
+
+nav.elm-nav.elm-header-hierarchy .fancytree-node span {
+color: #094a64;
+}
+
+nav.elm-nav.elm-header-hierarchy span.fancytree-active.fancytree-focused span.fancytree-title
+{
+color:#52c5ce;
+}
+
+nav.elm-nav.elm-header-hierarchy .fancytree-node.fancytree-focused span.fancytree-title:hover {
+color:#52c5ce;
+}
+
+nav.elm-nav.elm-header-hierarchy .no-touch .fancytree-node:hover span, nav.elm-nav.elm-header-hierarchy .fancytree-node:hover span{
+color:#52c5ce;
+}
+
+dl.mt-listing-detailed dd button.mt-icon-expand-collapse:hover {
+color:#52c5ce;
+}
+
+/*Ellipsis Fix*/
+.elm-header-global-nav .mt-icon-hierarchy-mobile-view-trigger, .elm-header-global-nav .mt-icon-hierarchy-mobile-view-trigger:focus, .elm-header-global-nav .mt-icon-hierarchy-mobile-view-trigger:active {
+    color: #094a64;
+}
+
+    .elm-header-global-nav .mt-icon-hierarchy-mobile-view-trigger:active, .no-touch .elm-header-global-nav .mt-icon-hierarchy-mobile-view-trigger:hover {
+        color: #52c5ce;
+    }
