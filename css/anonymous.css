@@ -2,3 +2,17 @@
 .elm-header-user-nav {
 display: none;
 }
+
+
+/*I.E. Login Fix*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+body.columbia-special-userlogin footer.elm-footer {
+position: absolute;
+bottom:0;
+}
+footer.elm-footer .nbs-footer .copyright-info p {
+margin-bottom: 0;
+padding-bottom: 5px;
+}
+}
