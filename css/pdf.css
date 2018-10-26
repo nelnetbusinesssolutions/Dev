@@ -566,7 +566,8 @@ dd {
 }
 
 .important {
-    background-image: url(/@api/deki/files/583/Notes_Caution_icon.png?origin=mt-web);
+    background-image: url(/@api/deki/files/409/Notes_Caution_icon.png?origin=mt-web);
+
 }
 
 .important {
@@ -580,7 +581,9 @@ dd {
     background-position: 15px 10px!important;
     border: 1px solid #8DCE19;
     min-height: 30px;
+    bacground-size: 15px !important;
 }
+
 
 .note-blank {
     overflow: hidden;
@@ -614,7 +617,7 @@ ul.checkbox-list li {
 }
 
 .pdf-image-large {
-max-height: 890px;
+max-height: 850px;
 margin-left: auto;
 margin-right: auto;
 display:block;
