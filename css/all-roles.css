@@ -1204,3 +1204,120 @@ padding-right:0;
 body footer.elm-content-footer .elm-related-articles-container {
 display:none;
 }
+
+/*Top Navigation Links*/
+.elm-header-homepage-nav .elm-homepage-nav-item a {
+    color: #6c9b3e;
+}
+
+.elm-header-homepage-nav .elm-homepage-nav-item a:hover {
+    color: #094A64;
+}
+
+
+@media screen and (max-width: 800px) {
+.elm-header-homepage-nav.elm-nav{
+display: none;
+}
+}
+
+
+
+
+/*Hide Attachments*/
+
+.elm-attachments  {
+display: none;
+}
+
+body.columbia-group-pro-admin .elm-attachments {
+display: block;
+}
+.columbia-article-media-repository .elm-attachments {
+display: block;
+}
+
+
+/*Printer Friendly Icon*/
+
+.mt-icon-article-pdf:before {
+    content: '\e651';
+}
+
+
+/*Table*/
+
+
+table {
+border-bottom: none;
+}
+
+/*Helper Text*/
+/*.mt-carousel-helper-text {
+display: none;
+}
+
+.mt-help-breadcrumb p.refiner {
+    display: inline;
+    font-weight: bold;
+    padding-left: 10px;
+}*/
+
+
+/*Help Text*/
+
+
+/*.mt-carousel-helper-text, .mt-carousel-helper-text.mt-hide {
+    visibility: hidden;
+display: block;
+margin-left: 0;
+margin-top: -15px;
+}
+
+.mt-carousel-helper-text:after, .mt-carousel-helper-text.mt-hide:after {
+    content: 'Refine results by selecting a filter or changing the search terms.';
+    display: block !important;
+    visibility: visible;
+}*/
+
+/*Helper Text*/
+.mt-carousel-helper-text {
+    display: none;
+}
+
+.mt-carousel-helper-text.refine {
+    display: block;
+margin-left: 0;
+}
+
+@media screen and (max-width: 1043px) {
+body .elm-header-user-nav .elm-nav-container ol li.elm-user-menu a {
+    width: 100%;
+}
+body .elm-header-user-nav .elm-nav-container ol li.elm-user-menu a:before {
+    vertical-align: middle;
+}
+
+}
+
+@media screen and (max-width: 914px) {
+body .elm-header-user-nav .elm-nav-container ol li.elm-user-menu a {
+width: 1.95em;
+}
+
+}
+
+
+/*EXPAND/COLLAPSE BUTTON CSS FOR EXPANDABLE LISTS*/
+
+.expand-button a.toggle-all {
+    color: #094a64 !important;
+    padding: 10px;
+    border-radius: 30px;
+    border: 1px solid #094a64;
+    transition: all 0.2s ease;
+}
+
+.expand-button a.toggle-all:hover {
+    border-radius: 0;
+}
