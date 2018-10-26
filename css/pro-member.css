@@ -17,3 +17,13 @@
 .columbia-group-pro-viewer .mt-classification-filter-container.mt-search-classification-widget {
     display: none;
 }
+
+
+/*Remove Subscribe Button*/
+.columbia-group-pro-viewer li.elm-page-notifications {
+    display: none;
+}
+
+body.columbia-group-pro-viewer.columbia-group-pro-draft li.elm-page-notifications {
+display: block;
+}
