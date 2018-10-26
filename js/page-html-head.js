@@ -94,5 +94,17 @@
             $('.expandable-list dt').toggleClass('open');
             $('.expandable-list dd').slideToggle();
         });
+
+$('.mt-feedback-consent-checkbox').closest('.mt-field').remove();
+
+$('.elm-pdf-export a').attr('title','Printer friendly page');
+
+$('.mt-carousel-helper-text').html('Refine results by selecting a filter or entering in a new search term');
+
+$('<div>Refine results by selecting a filter or changing the search terms.</div>').appendTo('.mt-help-breadcrumb-container.mt-search-breadcrumb-widget');
     });
+
+
+
+
 </script>
