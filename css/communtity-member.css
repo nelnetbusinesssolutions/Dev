@@ -32,3 +32,8 @@ body.elm-user-pro-member.columbia-group-pro-viewer .elm-attachments .a.mt-icon-p
 .mt-classification-filter-container.mt-search-classification-widget {
     display: none;
 }
+
+
+nav.elm-header-user-nav.elm-nav {
+    display: block;
+}
