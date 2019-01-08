@@ -14,9 +14,9 @@
 }
 
 /*hides the cog icon for user preferences*/
-a.mt-icon-user-preferences {
+/*a.mt-icon-user-preferences {
     Display: none !important;
-}
+}*/
 
 section#attachments {
     display: none;

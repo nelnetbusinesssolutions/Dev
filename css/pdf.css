@@ -7,7 +7,7 @@
     margin: 0.85in 0.55in .55in 0.55in;
 
     @top-left {
-        
+        content: flow(header);
         vertical-align: bottom;
         border-bottom: 1px solid #ccc;
         padding-bottom: 5px;
@@ -55,6 +55,10 @@ img[style], img {
 }
 
 /* header */
+.pdf-header {
+    flow: static(header);
+}
+
 .pdf-logo {
     static: url(https://a.mtstatic.com/@public/production/site_6395/1456441833-social-share.png);
     background: #0f4055;
@@ -67,6 +71,16 @@ img[style], img {
 }
 .pdf-site-title {
     display: inline-block;
+}
+
+/*Page Access Flag*/
+.mt-permission-indicator {
+    background-color: #deefcf;
+    border: 1px solid #7fc041;
+    width: 200px;
+    border-radius: 3px;
+    text-align: center;
+    padding: 2px;
 }
 
 /* footer */
@@ -318,7 +332,7 @@ input[type="submit"].disabled:hover,
 
 /*headers*/
 h1, h2, h3, h4, h5, h6 {
-    color: #b58228;
+    color: #476F8A;
     font-family: arial, helvetica, sans-serif, 'arial unicode ms';
     font-weight: normal!important;
     line-height: 1;

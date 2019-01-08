@@ -1321,3 +1321,48 @@ width: 1.95em;
 .expand-button a.toggle-all:hover {
     border-radius: 0;
 }
+
+/*Image Alignment*/
+img { vertical-align:text-bottom; }
+
+/* page access requirement indicator */
+.mt-content-side {
+    clear: both;
+    @media all and (min-width: 18.75em) {
+        float: left;
+    }
+    @media all and (min-width: 37.5em) {
+        float: right;
+    }
+}
+.mt-permission-indicator {
+    border-radius: @border-radius-lsf;
+    border: 1px solid @highlight-color;
+    background: #fff;
+    /*.mt-highlight-container;*/
+    clear: none;
+    display: block;
+    float: right;
+    font-size: 80%;
+    margin: 0 0 1em 1em;
+    overflow: hidden;
+    padding: .8em;
+    width: 12.75em;
+    text-align: center;
+    @media all and (min-width: 18.75em) {
+        margin: 0 0 1em;
+    }
+    @media all and (min-width: 37.5em) {
+        margin: 0 0 1em 1em;
+    }
+}
+
+
+.mt-permission-indicator-value {
+    clear: both;
+}
+.mt-permission-indicator-value:before {
+    content: '\e6c5';
+    .icon-font-declaration;
+    margin-right: .5em;
+}
