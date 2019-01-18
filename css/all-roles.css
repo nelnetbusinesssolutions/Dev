@@ -696,14 +696,27 @@ header.elm-header nav.header-links {
     font-weight: bold;
 }
 
-/*PDF & Subscription color change*/
-.elm-page-notifications .mt-icon-page-notification, .elm-page-notifications .mt-icon-page-notification:active, .elm-page-notifications .mt-icon-page-notification:visited, .elm-page-notifications .mt-icon-page-notification.off:visited:visited {
+/* Meta Icon Styles */
+
+.elm-meta-icons ul {
+    display: flex;
+}
+
+.elm-meta-icons li {
+    margin: auto 2px;
+}
+
+.mt-icon-email-share, .mt-icon-copy-share {
     color: #094a64 !important;
+}
+
+.elm-page-notifications .mt-icon-page-notification, .elm-page-notifications .mt-icon-page-notification:active, .elm-page-notifications .mt-icon-page-notification:visited, .elm-page-notifications .mt-icon-page-notification.off:visited:visited {
+    color: #094a64;
 }
 .elm-pdf-export .mt-icon-article-pdf, .elm-pdf-export .mt-icon-article-pdf:active .elm-pdf-export .mt-icon-article-pdf:visited, .elm-pdf-export .mt-icon-article-pdf:focus {
     color: #094a64;
 }
-.elm-pdf-export .mt-icon-article-pdf:hover {
+.elm-pdf-export .mt-icon-article-pdf:hover, .mt-icon-email-share:hover, .mt-icon-copy-share:hover {
     color: #52c5ce !important;
 }
 
@@ -713,6 +726,17 @@ color:#094a64;
 
 .elm-page-notifications .mt-icon-page-notification:hover,.elm-page-notifications .mt-icon-page-notification.off:hover {
     color: #52c5ce !important;
+}
+
+    /*Meta Icon Margin Adjustment*/
+@media (max-width: 37.5em) {
+    .elm-meta-data .elm-pdf-export {
+        margin: auto 2px;
+    }
+}
+
+.elm-meta-data .elm-meta-icons {
+    margin: 0 0 1rem 0;
 }
 
 /*Color change for Next/Previous links*/
@@ -1337,23 +1361,25 @@ img { vertical-align:text-bottom; }
 }
 .mt-permission-indicator {
     border-radius: @border-radius-lsf;
-    border: 1px solid @highlight-color;
     background: #fff;
     /*.mt-highlight-container;*/
     clear: none;
     display: block;
     float: right;
-    font-size: 80%;
+    font-size: 100%;
+    font-weight: bold;
     margin: 0 0 1em 1em;
     overflow: hidden;
-    padding: .8em;
     width: 12.75em;
-    text-align: center;
+    text-align: right;
     @media all and (min-width: 18.75em) {
         margin: 0 0 1em;
     }
     @media all and (min-width: 37.5em) {
         margin: 0 0 1em 1em;
+    }
+    @media all and (max-width: 37.5em) {
+        text-align: left;
     }
 }
 
@@ -1365,4 +1391,5 @@ img { vertical-align:text-bottom; }
     content: '\e6c5';
     .icon-font-declaration;
     margin-right: .5em;
+    color: #b13a69;
 }
