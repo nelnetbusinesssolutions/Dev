@@ -1,10 +1,11 @@
 <script>
     $(document).ready(function() {
 
-        $('dl.expandable-list dd').hide();
+        //$('dl.expandable-list dd').hide();
         $('.expandable-list dt').click(function(e) {
             e.preventDefault();
-            $(this).toggleClass('open').next('.expandable-list dd').slideToggle(300);
+            $(this).toggleClass('open').next('.expandable-list dd').toggleClass('open');
+//slideToggle(300);
         });
 
         //$("#mt-search-container #mt-help-results input.input-text").attr("placeholder", "Search our resources");
@@ -87,12 +88,22 @@
 
 
 <script>
+    /*** Expandable List Expand/Collapse All Button ***/
     $(document).ready(function() {
-
         $("a.toggle-all").on("click", function(e) {
             e.preventDefault();
-            $('.expandable-list dt').toggleClass('open');
-            $('.expandable-list dd').slideToggle();
+            //Count the number of items and the number of open items
+            let openItems = $('.expandable-list dt.open');
+            let allItems = $('.expandable-list dt');
+            //If less than half of the items are open, open all. Otherwise, close all items.
+            $('.expandable-list dt').toggleClass('open', openItems.length <= allItems.length/2);
+            $('.expandable-list dd').toggleClass('open', openItems.length <= allItems.length/2);
+
+
+//slideToggle();
+
+
+            });
         });
 
 $('.mt-feedback-consent-checkbox').closest('.mt-field').remove();
@@ -102,7 +113,7 @@ $('.elm-pdf-export a').attr('title','Printer friendly page');
 $('.mt-carousel-helper-text').html('Refine results by selecting a filter or entering in a new search term');
 
 $('<div>Refine results by selecting a filter or changing the search terms.</div>').appendTo('.mt-help-breadcrumb-container.mt-search-breadcrumb-widget');
-    });
+
 
 
 
