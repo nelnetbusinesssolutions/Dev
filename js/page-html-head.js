@@ -1,11 +1,18 @@
 <script>
+/* Expandable List Functionality */
     $(document).ready(function() {
-
-        //$('dl.expandable-list dd').hide();
         $('.expandable-list dt').click(function(e) {
             e.preventDefault();
+            // Add the open class to the clicked dt and corresponding dd
             $(this).toggleClass('open').next('.expandable-list dd').toggleClass('open');
-//slideToggle(300);
+            //Change the aria-expanded attribute from 'true' to 'false' or 'false' to 'true'
+            $(this).children('button').attr('aria-expanded', function(i, origValue) {
+                if (origValue == 'true') {
+                    return 'false';
+                } else {
+                    return 'true';
+                };
+            });
         });
 
         //$("#mt-search-container #mt-help-results input.input-text").attr("placeholder", "Search our resources");
@@ -98,13 +105,15 @@
             //If less than half of the items are open, open all. Otherwise, close all items.
             $('.expandable-list dt').toggleClass('open', openItems.length <= allItems.length/2);
             $('.expandable-list dd').toggleClass('open', openItems.length <= allItems.length/2);
-
-
-//slideToggle();
-
-
-            });
+            //If the dt has a class of open, change the button aria-expanded attribute to true.
+            //Otherwise, change it to false.
+            if ($('.expandable-list dt').hasClass('open')) {
+                $('.expandable-list dt button').attr('aria-expanded', 'true');
+            } else {
+                $('.expandable-list dt button').attr('aria-expanded', 'false');
+            };
         });
+    });
 
 $('.mt-feedback-consent-checkbox').closest('.mt-field').remove();
 

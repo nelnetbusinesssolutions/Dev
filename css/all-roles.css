@@ -706,12 +706,22 @@ header.elm-header nav.header-links {
     margin: auto 2px;
 }
 
+.elm-meta-icons li [class^='mt-icon'] {
+    color: #094a64 !important;
+}
+
+.elm-meta-icons li [class^='mt-icon']:hover {
+    color: #52c5ce !important;
+}
+
+
+/*
 .mt-icon-email-share, .mt-icon-copy-share {
     color: #094a64 !important;
 }
 
 .elm-page-notifications .mt-icon-page-notification, .elm-page-notifications .mt-icon-page-notification:active, .elm-page-notifications .mt-icon-page-notification:visited, .elm-page-notifications .mt-icon-page-notification.off:visited:visited {
-    color: #094a64;
+    color: #094a64 !important;
 }
 .elm-pdf-export .mt-icon-article-pdf, .elm-pdf-export .mt-icon-article-pdf:active .elm-pdf-export .mt-icon-article-pdf:visited, .elm-pdf-export .mt-icon-article-pdf:focus {
     color: #094a64;
@@ -719,14 +729,16 @@ header.elm-header nav.header-links {
 .elm-pdf-export .mt-icon-article-pdf:hover, .mt-icon-email-share:hover, .mt-icon-copy-share:hover {
     color: #52c5ce !important;
 }
-
+*/
 /*.no-touch .elm-pdf-export .mt-icon-article-pdf:hover {
 color:#094a64;
 }*/
-
+/*
 .elm-page-notifications .mt-icon-page-notification:hover,.elm-page-notifications .mt-icon-page-notification.off:hover {
     color: #52c5ce !important;
 }
+
+   */
 
     /*Meta Icon Margin Adjustment*/
 @media (max-width: 37.5em) {
@@ -1139,11 +1151,8 @@ dl.expandable-list dt {
     color: #31708f;
     background: #d9edf7;
     border: 1px solid #bce8f1;
-    padding-top: 10px;
+    padding: 0;
     margin-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 20px;
    cursor:pointer;
    transition: background-color 0.2s ease-in-out;
 }
@@ -1156,6 +1165,16 @@ dl.expandable-list dt:hover {
 dl.expandable-list dt.open{
     background: #021d39;
     color: #fff;
+}
+
+dl.expandable-list button, dl.expandable-list button:hover {
+    background: inherit;
+    border: none;
+    color: inherit;
+    font-weight: inherit;
+    padding: 10px 10px 10px 20px;
+    width: 100%;
+    text-align: left;
 }
 
 /*dl.expandable-list dt a.list-item::before {
@@ -1180,7 +1199,7 @@ dl.expandable-list dt.open{
 
 
 
-dl.expandable-list dt::before {
+dl.expandable-list button::before {
     font: 400 175%/1 icomoon;
     position: relative;
     top: .2em;
@@ -1191,7 +1210,7 @@ dl.expandable-list dt::before {
     transition: all .5s;
   }
 
-  dl.expandable-list dt.open::before {
+  dl.expandable-list dt.open button::before {
       content: '\e892';
       transform: rotate(180deg);
       position: relative;
@@ -1206,6 +1225,10 @@ dl.expandable-list dd{
     margin-top: -2px;
     margin-bottom: -2px;
     display:none;
+}
+
+.deki-content-edit dl.expandable-list dd {
+    display: block;
 }
 
 dl.expandable-list dd.open {
