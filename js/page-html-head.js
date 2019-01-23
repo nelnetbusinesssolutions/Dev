@@ -1,5 +1,16 @@
 <script>
 /* Expandable List Functionality */
+
+    //Wrap the text of each dt in a button
+    $(document).ready(function() {
+        $('.expandable-list dt').each(function(index) {
+            $(this).wrapInner( '<button aria-controls="item-' + (index + 1) + '" aria-expanded="false"></button>' );
+            $(this).next('.expandable-list dd').attr('id', function() {
+                return 'item-' + (index + 1);
+            });
+        });
+    });
+
     $(document).ready(function() {
         $('.expandable-list dt').click(function(e) {
             e.preventDefault();
