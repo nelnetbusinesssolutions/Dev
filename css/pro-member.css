@@ -27,3 +27,43 @@
 body.columbia-group-pro-viewer.columbia-group-pro-draft li.elm-page-notifications {
 display: block;
 }
+
+/*** Styles for Page Settings Classification Tooltips ***/
+#live-tags-custom .mt-icon-question2 {
+    float: left;
+    margin-right: 3px;
+}
+
+#live-tags-custom .mt-icon-question2:hover:before {
+    color: #52c5ce;
+}
+
+.live-tag-special-section {
+    position: relative;
+}
+
+.class-tooltip {
+    display: block;
+    position: absolute;
+    bottom: 4.5rem;
+    background: #B13A69;
+    color: #fff;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+@media all and (min-width: 50em) {
+    .class-tooltip {
+        bottom: 4.7rem;
+    }
+}
+
+@media all and (min-width: 80em) {
+    .class-tooltip {
+        bottom: 5.1rem;
+    }
+}
+
+.class-tooltip-hidden {
+    display: none;
+}
