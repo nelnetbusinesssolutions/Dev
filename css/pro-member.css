@@ -29,16 +29,16 @@ display: block;
 }
 
 /*** Styles for Page Settings Classification Tooltips ***/
-#live-tags-custom .mt-icon-question2 {
+#live-tags-custom .mt-icon-question2, #live-tag-input-area .mt-icon-question2 {
     float: left;
     margin-right: 3px;
 }
 
-#live-tags-custom .mt-icon-question2:hover:before {
+#live-tags-custom .mt-icon-question2:hover:before, #live-tag-input-area .mt-icon-question2:hover:before {
     color: #52c5ce;
 }
 
-.live-tag-special-section {
+.live-tag-special-section, #live-tag-normal-tags {
     position: relative;
 }
 
@@ -50,6 +50,11 @@ display: block;
     color: #fff;
     padding: 4px;
     border-radius: 4px;
+}
+
+#live-tag-normal-tags .class-tooltip {
+    top: -1.7rem;
+    height: min-content;
 }
 
 @media all and (min-width: 50em) {

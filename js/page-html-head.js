@@ -144,66 +144,63 @@ $('<div>Refine results by selecting a filter or changing the search terms.</div>
 /*** Creating tooltips for each page settings classification ***/
 
 document.addEventListener('DOMContentLoaded', function() {
-//The class for each tooltip
-class PageSettingTooltip {
-    constructor(name, id) {
-        //Name and id are used for selecting elements
-        this.name = name;
-        this.id = id;
-        //Default text for tooltip
-        this.description = 'Select the appropriate option from the drop-down.'
-    }
-
-    //Add the question mark icon before the label
-    appendIcon() {
-        const questionIcon = document.createElement('SPAN'),
-              parentDiv = document.querySelector(this.id).parentElement,
-              label = document.querySelector(this.id);
-        //This class adds the question mark image in MT
-        questionIcon.classList.add('mt-icon-question2');
-        //Giving the questionIcon an id so it can be selected later
-        questionIcon.id = this.name + '-qicon';
-        //Insert the icon before the label
-        parentDiv.insertBefore(questionIcon, label);
-    }
-
-    //Add a tooltip to the icon
-    addTooltip() {
-        const classTooltip = document.createElement('DIV'),
-              questionIcon = document.querySelector(`#${this.name}-qicon`);
-        //Add two classes to the tooltip for styling
-        classTooltip.classList.add('class-tooltip');
-        classTooltip.classList.add('class-tooltip-hidden')
-        //The tooltip text is the class description
-        classTooltip.textContent = this.description;
-        //Append the tooltip to the question icon
-        questionIcon.appendChild(classTooltip);
-        //The tooltip will display the question icon is hovered over
-        questionIcon.addEventListener('mouseenter', function() {
-            classTooltip.classList.remove('class-tooltip-hidden');
-        });
-        questionIcon.addEventListener('mouseleave', function() {
-            classTooltip.classList.add('class-tooltip-hidden')
-        })
-    }
+function PageSettingTooltip (name, id) {
+    //Name and id are used for selecting elements
+    this.name = name;
+    this.id = id;
+    //Default text for tooltip
+    this.description = 'Select the appropriate option from the drop-down.';
 }
 
+//Add a question mark icon before the label
+PageSettingTooltip.prototype.appendIcon = function() {
+    var questionIcon = document.createElement('SPAN'),
+          parentDiv = document.querySelector(this.id).parentElement,
+          label = document.querySelector(this.id);
+    //This class adds the question mark image in MT
+    questionIcon.classList.add('mt-icon-question2');
+    //Giving the questionIcon an id so it can be selected later
+    questionIcon.id = this.name + '-qicon';
+    //Insert the icon before the label
+    parentDiv.insertBefore(questionIcon, label);
+};
+
+//Add a tooltip to the icon
+PageSettingTooltip.prototype.addTooltip = function() {
+    var classTooltip = document.createElement('DIV'),
+          questionIcon = document.querySelector('#' + this.name + '-qicon');
+    //Add two classes to the tooltip for styling
+    classTooltip.classList.add('class-tooltip');
+    classTooltip.classList.add('class-tooltip-hidden');
+    //The tooltip text is the class description
+    classTooltip.textContent = this.description;
+    //Append the tooltip to the question icon
+    questionIcon.appendChild(classTooltip);
+    //The tooltip will display the question icon is hovered over
+    questionIcon.addEventListener('mouseenter', function() {
+        classTooltip.classList.remove('class-tooltip-hidden');
+    });
+    questionIcon.addEventListener('mouseleave', function() {
+        classTooltip.classList.add('class-tooltip-hidden')
+    });
+};
+
 //Grab all the page classification labels
-const allLabels = document.querySelectorAll('.live-tag-label'),
+var allLabels = document.querySelectorAll('.live-tag-label'),
       labelsArray = Array.prototype.slice.call(allLabels);
 //Empty array to hold each of the instantiated PageSettingTooltip objects
-let pstArray = [];
+var pstArray = [];
 
 //Iterate through each of the page classification labels
 labelsArray.forEach(function(x, index) {
     //Define the name and id for each object
-    let classifName = labelsArray[index].innerHTML.replace(/\s+/g, '-').toLowerCase();
-    let classifId = `#${labelsArray[index].id}`;
+    var classifName = labelsArray[index].innerHTML.replace(/\s+/g, '-').toLowerCase();
+    var classifId = '#' + labelsArray[index].id;
     //Instantiate a new PageSetting Tooltip
     pstArray[index] = new PageSettingTooltip(classifName, classifId);
     //Add the icon
     pstArray[index].appendIcon();
-})
+});
 
     /* *Section for defining page setting classification tooltip text * */
 pstArray[0].description = "I'm an article type!";
@@ -219,6 +216,31 @@ pstArray[8].description = "I'll pwn you.";
 //Iterate through labelsArray to add the tooltip
 labelsArray.forEach(function(x, index) {
     pstArray[index].addTooltip();
+});
+
+//Add an icon/tooltip to the Tags label
+//First add the icon
+var tagLabel = document.querySelector('#live-tag-input-area label'),
+      tagParent = document.querySelector('#live-tag-input-area'),
+      tagIcon = document.createElement('SPAN');
+tagIcon.classList.add('mt-icon-question2');
+tagIcon.id = 'tags-qicon';
+tagParent.insertBefore(tagIcon, tagLabel);
+//Then add the tooltip
+var tagTooltip = document.createElement('DIV');
+//Add two classes to the tooltip for styling
+tagTooltip.classList.add('class-tooltip');
+tagTooltip.classList.add('class-tooltip-hidden');
+//Add tooltip text
+tagTooltip.textContent = "Tag, you're it!";
+//Append the tooltip to the icon
+tagIcon.appendChild(tagTooltip);
+//The tooltip will display the question icon is hovered over
+tagIcon.addEventListener('mouseenter', function() {
+    tagTooltip.classList.remove('class-tooltip-hidden');
+});
+tagIcon.addEventListener('mouseleave', function() {
+    tagTooltip.classList.add('class-tooltip-hidden');
 });
 });
 </script>

@@ -1150,19 +1150,20 @@ color:#52c5ce;
 dl.expandable-list dt {
     color: #31708f;
     background: #d9edf7;
-    border: 1px solid #bce8f1;
+    border-radius: 8px;
     padding: 0;
     margin-top: 10px;
    transition: background-color 0.2s ease-in-out;
 }
 
-dl.expandable-list dt:hover {
-    background: #021d39;
+dl.expandable-list dt button:hover, dl.expandable-list dt button:focus {
+    background: #0071a4;
     color: #fff;
+    box-shadow: none;
 }
 
-dl.expandable-list dt.open{
-    background: #021d39;
+dl.expandable-list dt.open button {
+    background: #094a64;
     color: #fff;
 }
 
@@ -1175,7 +1176,7 @@ dl.expandable-list button, dl.expandable-list button:hover {
     border: none;
     color: inherit;
     font-weight: inherit;
-    padding: 10px;
+    padding: 2px;
     width: 100%;
     text-align: left;
 }
@@ -1205,7 +1206,8 @@ dl.expandable-list button::before {
 
 dl.expandable-list dd{
     background: #efefef;
-    padding: 30px;
+    padding: 15px 30px 20px;
+    border-radius: 0 0 8px 8px;
     margin-top: -2px;
     margin-bottom: -2px;
     display:none;
@@ -1336,7 +1338,7 @@ width: 1.95em;
 
 /*EXPAND/COLLAPSE BUTTON CSS FOR EXPANDABLE LISTS*/
 
-.expand-button {
+/*.expand-button {
     margin: 20px auto;
 }
 
@@ -1350,7 +1352,7 @@ width: 1.95em;
 
 .expand-button a.toggle-all:hover {
     border-radius: 0;
-}
+}*/
 
 /*Image Alignment*/
 img { vertical-align:text-bottom; }
