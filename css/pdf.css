@@ -526,8 +526,7 @@ table td {
 .table th {
     background: #d9d9d9;
     border: 1px solid #aaa;
-    /*color: #333;*/
-    color:red;
+    color: #333;
 }
 .table td {
     color: #333;
@@ -635,4 +634,18 @@ max-height: 850px;
 margin-left: auto;
 margin-right: auto;
 display:block;
+}
+
+/* Expandable List CSS */
+.expand-button {
+    display: none;
+}
+
+.expandable-list {
+    margin-top: 10px;
+}
+
+/* Checklist CSS */
+.reset-checklist, .checklist-note {
+    display: none;
 }

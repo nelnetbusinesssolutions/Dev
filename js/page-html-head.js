@@ -1,13 +1,11 @@
 <script>
 /* Expandable List Functionality */
 
-    //Wrap the text of each dt in a button
+    //Wrap the text of each dt in a button and assign aria values
     $(document).ready(function() {
         $('.expandable-list dt').each(function(index) {
             $(this).wrapInner( '<button aria-controls="item-' + (index + 1) + '" aria-expanded="false"></button>' );
-            $(this).next('.expandable-list dd').attr('id', function() {
-                return 'item-' + (index + 1);
-            });
+            $(this).next('.expandable-list dd').attr('id', 'item-' + (index + 1));
         });
     });
 
@@ -24,7 +22,25 @@
                     return 'true';
                 };
             });
+            //Slide
+            if ( $(this).hasClass('open')) {
+                $(this).next('.expandable-list dd').slideDown();
+            } else {
+                $(this).next('.expandable-list dd').slideUp();
+            };
         });
+
+        //Adjust width of expandable list based on TOC state
+        function checkTocState() {
+            if ($('#mt-toc-container .mt-toggle').hasClass('mt-toggle-collapse')) {
+                $('dl.expandable-list').addClass('toc-avoid');
+            } else {
+                $('dl.expandable-list').removeClass('toc-avoid');
+            };
+        }
+
+        checkTocState();
+        $('#mt-toc-container .mt-toggle').click(function () {checkTocState()});
 
         //$("#mt-search-container #mt-help-results input.input-text").attr("placeholder", "Search our resources");
         //$('main article footer .elm-related-articles-container').insertAfter('main article aside#mt-toc-container');
@@ -120,12 +136,15 @@
             //Otherwise, change it to false.
             if ($('.expandable-list dt').hasClass('open')) {
                 $('.expandable-list dt button').attr('aria-expanded', 'true');
+                $('.expandable-list dt').next('.expandable-list dd').slideDown();
             } else {
                 $('.expandable-list dt button').attr('aria-expanded', 'false');
+                $('.expandable-list dt').next('.expandable-list dd').slideUp();
             };
         });
     });
 
+$(document).ready(function () {
 $('.mt-feedback-consent-checkbox').closest('.mt-field').remove();
 
 $('.elm-pdf-export a').attr('title','Printer friendly page');
@@ -134,7 +153,7 @@ $('.mt-carousel-helper-text').html('Refine results by selecting a filter or ente
 
 $('<div>Refine results by selecting a filter or changing the search terms.</div>').appendTo('.mt-help-breadcrumb-container.mt-search-breadcrumb-widget');
 
-
+});
 
 
 
@@ -144,6 +163,7 @@ $('<div>Refine results by selecting a filter or changing the search terms.</div>
 /*** Creating tooltips for each page settings classification ***/
 
 document.addEventListener('DOMContentLoaded', function() {
+if (document.querySelector('#mt-summary')) {
 function PageSettingTooltip (name, id) {
     //Name and id are used for selecting elements
     this.name = name;
@@ -242,5 +262,6 @@ tagIcon.addEventListener('mouseenter', function() {
 tagIcon.addEventListener('mouseleave', function() {
     tagTooltip.classList.add('class-tooltip-hidden');
 });
+};
 });
 </script>

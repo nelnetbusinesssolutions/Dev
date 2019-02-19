@@ -1206,26 +1206,46 @@ dl.expandable-list button::before {
 
 dl.expandable-list dd{
     background: #efefef;
-    padding: 15px 30px 20px;
+    padding: 1em 1.4em 1.25em;
     border-radius: 0 0 8px 8px;
     margin-top: -2px;
     margin-bottom: -2px;
     display:none;
 }
 
-.deki-content-edit dl.expandable-list dd {
-    display: block;
+@media all and (min-width: 37.5em) {
+    dl.expandable-list.toc-avoid {
+        width: 60%;
+    }
 }
 
-dl.expandable-list dd.open {
+@media all and (min-width: 50em) {
+    dl.expandable-list.toc-avoid {
+        width: 64%;
+    }
+}
+
+@media all and (min-width: 65.25em) {
+    dl.expandable-list.toc-avoid {
+        width: 69%;
+    }
+}
+
+@media all and (min-width: 80em) {
+    dl.expandable-list.toc-avoid {
+        width: 72%;
+    }
+}
+
+.deki-content-edit dl.expandable-list dd {
     display: block;
 }
 
 .elm-header-custom {
     padding-top: .9em;
     padding-bottom:.9em;
-padding-left:0;
-padding-right:0;
+    padding-left:0;
+    padding-right:0;
 }
 
 
@@ -1338,21 +1358,9 @@ width: 1.95em;
 
 /*EXPAND/COLLAPSE BUTTON CSS FOR EXPANDABLE LISTS*/
 
-/*.expand-button {
-    margin: 20px auto;
-}
-
 .expand-button a.toggle-all {
-    color: #094a64 !important;
-    padding: 10px;
-    border-radius: 30px;
-    border: 1px solid #094a64;
-    transition: all 0.2s ease;
+    font-weight: bold;
 }
-
-.expand-button a.toggle-all:hover {
-    border-radius: 0;
-}*/
 
 /*Image Alignment*/
 img { vertical-align:text-bottom; }
@@ -1400,4 +1408,10 @@ img { vertical-align:text-bottom; }
     .icon-font-declaration;
     margin-right: .5em;
     color: #b13a69;
+}
+
+.mt-page-summary {
+    @media all and (max-width: 37.5em) {
+        clear: both;
+    }
 }
