@@ -1172,13 +1172,22 @@ dl.expandable-list dt.open button {
 }
 
 dl.expandable-list button, dl.expandable-list button:hover {
-    background: inherit;
     border: none;
     color: inherit;
     font-weight: inherit;
     padding: 2px;
     width: 100%;
     text-align: left;
+}
+
+dl.expandable-list button {
+    background: #d9edf7;
+    display: flex;
+    align-items: flex-start;
+}
+
+dl.expandable-list button:hover {
+    background: inherit;
 }
 
 dl.expandable-list button::before {

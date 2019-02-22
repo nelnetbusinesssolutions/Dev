@@ -29,12 +29,12 @@ display: block;
 }
 
 /*** Styles for Page Settings Classification Tooltips ***/
-#live-tags-custom .mt-icon-question2, #live-tag-input-area .mt-icon-question2 {
+#live-tags-custom .mt-icon-question2, #live-tag-input-area .mt-icon-question2, .mt-overview-container .mt-icon-question2 {
     float: left;
     margin-right: 3px;
 }
 
-#live-tags-custom .mt-icon-question2:hover:before, #live-tag-input-area .mt-icon-question2:hover:before {
+#live-tags-custom .mt-icon-question2:hover:before, #live-tag-input-area .mt-icon-question2:hover:before, .mt-overview-container .mt-icon-question2:hover:before {
     color: #52c5ce;
 }
 
@@ -54,18 +54,31 @@ display: block;
 
 #live-tag-normal-tags .class-tooltip {
     top: -1.7rem;
-    height: min-content;
+    bottom: auto;
+}
+
+.mt-overview-container .class-tooltip {
+    top: 2rem;
+    bottom: auto;
 }
 
 @media all and (min-width: 50em) {
     .class-tooltip {
         bottom: 4.7rem;
     }
+
+    #live-tag-normal-tags .class-tooltip, .mt-overview-container .class-tooltip {
+        bottom: auto;
+    }
 }
 
 @media all and (min-width: 80em) {
     .class-tooltip {
         bottom: 5.1rem;
+    }
+
+    #live-tag-normal-tags .class-tooltip, .mt-overview-container .class-tooltip {
+        bottom: auto;
     }
 }
 

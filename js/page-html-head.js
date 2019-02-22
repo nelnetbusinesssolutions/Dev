@@ -223,45 +223,119 @@ labelsArray.forEach(function(x, index) {
 });
 
     /* *Section for defining page setting classification tooltip text * */
-pstArray[0].description = "I'm an article type!";
-pstArray[1].description = "Hello markets!";
-pstArray[2].description = "Product in the house!";
-pstArray[3].description = "Your platform to stand on!";
-pstArray[4].description = "All the world's a stage.";
-pstArray[5].description = "Hit the target.";
-pstArray[6].description = "Year after year after year.";
-pstArray[7].description = "Do you belong here? Let me see your access.";
-pstArray[8].description = "I'll pwn you.";
+pstArray[0].description = "Controls page display and hierarchy"; //Article type
+pstArray[1].description = "If applies to all or none, choose \'Not Market Specific\'"; //Market
+pstArray[2].description = "Select an option, NA, or Multi-product"; //Product
+pstArray[3].description = "Controls URL for authentication"; //Platform
+pstArray[4].description = "Track when the article is ready for posting or needs editing"; //Stage
+pstArray[5].description = "Who the article was written for, though others may have access"; //Target Audience
+pstArray[6].description = "Used for release notes; not required for other pages"; //Year
+pstArray[7].description = "Controls Internal Use Only flag"; //Page Access
+pstArray[8].description = "Person responsible for updating page; receives all feedback"; //Owner
 
 //Iterate through labelsArray to add the tooltip
 labelsArray.forEach(function(x, index) {
     pstArray[index].addTooltip();
 });
 
-//Add an icon/tooltip to the Tags label
-//First add the icon
-var tagLabel = document.querySelector('#live-tag-input-area label'),
-      tagParent = document.querySelector('#live-tag-input-area'),
-      tagIcon = document.createElement('SPAN');
-tagIcon.classList.add('mt-icon-question2');
-tagIcon.id = 'tags-qicon';
-tagParent.insertBefore(tagIcon, tagLabel);
-//Then add the tooltip
-var tagTooltip = document.createElement('DIV');
-//Add two classes to the tooltip for styling
-tagTooltip.classList.add('class-tooltip');
-tagTooltip.classList.add('class-tooltip-hidden');
-//Add tooltip text
-tagTooltip.textContent = "Tag, you're it!";
-//Append the tooltip to the icon
-tagIcon.appendChild(tagTooltip);
-//The tooltip will display the question icon is hovered over
-tagIcon.addEventListener('mouseenter', function() {
-    tagTooltip.classList.remove('class-tooltip-hidden');
-});
-tagIcon.addEventListener('mouseleave', function() {
-    tagTooltip.classList.add('class-tooltip-hidden');
-});
+//Add an icon/tooltip to the Tags and Summary labels
+function tooltipMaker (a, b, c) {
+    //Add the icon
+    var label = a,
+        parent = b,
+        icon = document.createElement('SPAN');
+    icon.classList.add('mt-icon-question2');
+    icon.id = label.textContent.toLowerCase() + '-qicon';
+    parent.insertBefore(icon, label);
+    //Add the tooltip
+    var tooltip = document.createElement('DIV');
+    tooltip.classList.add('class-tooltip');
+    tooltip.classList.add('class-tooltip-hidden');
+    //Add tooltip text
+    tooltip.textContent = c;
+    //Append the tooltip to the icon
+    icon.appendChild(tooltip);
+    //The tooltip will display when the question mark icon is hovered over
+    icon.addEventListener('mouseenter', function() {
+        tooltip.classList.remove('class-tooltip-hidden');
+    });
+    icon.addEventListener('mouseleave', function() {
+        tooltip.classList.add('class-tooltip-hidden');
+    });
+}
+
+//Wait for MT to append nodes to .mt-collapsible-section, then create Summary tooltip
+if (window.MutationObserver) {
+    var summContainer = document.querySelector('#mt-summary .mt-collapsible-section');
+    var observer = new MutationObserver(function(mutations) {
+        tooltipMaker(document.querySelector('.mt-overview-label'), document.querySelector('.mt-overview-container'), '2-3 sentences displayed in search results');
+    });
+    observer.observe(summContainer, {childList: true});
 };
+
+//Create Tags tooltip
+tooltipMaker(document.querySelector('#live-tag-input-area label'), document.querySelector('#live-tag-input-area'), '3-10 tags (search terms)');
+
+};
+});
+</script>
+<script>
+/* Checklist Functionality to Retain Checks */
+document.addEventListener('DOMContentLoaded', function() {
+    //Selects all checkboxes and puts them in an array
+    const boxes = document.querySelectorAll('#todo-list input'),
+          boxesArray = Array.prototype.slice.call(boxes),
+          //Get the pathname of the URL
+          pathname = window.location.pathname;
+
+    //Put any stored data into the variable checks
+    if (localStorage[pathname]) {
+        let checks = JSON.parse(localStorage.getItem(pathname));
+        //Iterate through checks
+        Object.keys(checks).forEach(function(key) {
+            //Set the value of the checked attribute on each box
+            //equal to the value stored in checks at the same index
+            let val = checks[key];
+            boxes[key].setAttribute('checked', val);
+        });
+    };
+
+    //Empty object to collect data
+    let boxStatus = {};
+    //Iterate through boxesArray
+    boxesArray.forEach(function(box, index) {
+        //If the box is checked, create a boxStatus entry with a value of true
+        if (box.checked == true) {
+            boxStatus[index] = true;
+            console.log('Checked!');
+        };
+        //Listen for clicks on each checkbox
+        box.addEventListener('click', function() {
+            //If you check the box, the boxStatus value is equal to true
+            //If you uncheck a box, the boxStatus value is equal to undefined
+            if (box.checked == true) {
+                boxStatus[index] = true;
+            } else {
+                boxStatus[index] = undefined;
+            };
+            //Store the new value
+            localStorage.setItem(pathname, JSON.stringify(boxStatus));
+        });
+    });
+
+    let resetButton = document.querySelectorAll('.reset-checklist'),
+        resetButtonArray = Array.prototype.slice.call(resetButton);
+    //Add listener to reset button
+    resetButtonArray.forEach(function(button) {
+        button.addEventListener('click', function() {
+        //Uncheck each box and empty boxStatus
+            boxesArray.forEach(function(box, index) {
+                box.checked = false;
+                boxStatus = {}
+            });
+        //Remove the article path from localStorage
+        localStorage.removeItem(pathname);
+        });
+    });
 });
 </script>
