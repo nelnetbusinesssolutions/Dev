@@ -124,14 +124,21 @@
 <script>
     /*** Expandable List Expand/Collapse All Button ***/
     $(document).ready(function() {
+        //Create the button before each list
+        $('<div class="expand-button"><a class="toggle-all"></a></div>').insertBefore('dl.expandable-list');
+        $('a.toggle-all').text('Expand/Collapse All');
+
+        //On click
         $("a.toggle-all").on("click", function(e) {
             e.preventDefault();
+            let target = $(e.target);
+            let targetDL = target.parent().next('.expandable-list');
             //Count the number of items and the number of open items
-            let openItems = $('.expandable-list dt.open');
-            let allItems = $('.expandable-list dt');
+            let openItems = targetDL.children('dt.open');
+            let allItems = targetDL.children('dt');
             //If less than half of the items are open, open all. Otherwise, close all items.
-            $('.expandable-list dt').toggleClass('open', openItems.length <= allItems.length/2);
-            $('.expandable-list dd').toggleClass('open', openItems.length <= allItems.length/2);
+            targetDL.children('dt').toggleClass('open', openItems.length <= allItems.length/2);
+            targetDL.children('dd').toggleClass('open', openItems.length <= allItems.length/2);
             //If the dt has a class of open, change the button aria-expanded attribute to true.
             //Otherwise, change it to false.
             if ($('.expandable-list dt').hasClass('open')) {

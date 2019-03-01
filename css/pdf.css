@@ -55,7 +55,7 @@ img[style], img {
 }
 
 /* header */
-.pdf-header {
+.mt-permission-indicator {
     flow: static(header);
 }
 
