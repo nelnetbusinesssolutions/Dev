@@ -4,7 +4,7 @@
     //Wrap the text of each dt in a button and assign aria values
     $(document).ready(function() {
         $('.expandable-list dt').each(function(index) {
-            $(this).wrapInner( '<button aria-controls="item-' + (index + 1) + '" aria-expanded="false"></button>' );
+            $(this).wrapInner( '<button aria-controls="item-' + (index + 1) + '" aria-expanded="false"><span></span></button>' );
             $(this).next('.expandable-list dd').attr('id', 'item-' + (index + 1));
         });
     });
@@ -169,7 +169,7 @@ $('<div>Refine results by selecting a filter or changing the search terms.</div>
 <script>
 /*** Creating tooltips for each page settings classification ***/
 
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function() {
 if (document.querySelector('#mt-summary')) {
 function PageSettingTooltip (name, id) {
     //Name and id are used for selecting elements
@@ -288,7 +288,7 @@ tooltipMaker(document.querySelector('#live-tag-input-area label'), document.quer
 </script>
 <script>
 /* Checklist Functionality to Retain Checks */
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function() {
     //Selects all checkboxes and puts them in an array
     const boxes = document.querySelectorAll('#todo-list input'),
           boxesArray = Array.prototype.slice.call(boxes),

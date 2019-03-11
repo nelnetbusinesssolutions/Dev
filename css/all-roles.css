@@ -1213,6 +1213,10 @@ dl.expandable-list button::before {
     cursor:text;
 }
 
+.expandable-list span {
+    min-width: 0;
+}
+
 dl.expandable-list dd{
     background: #efefef;
     padding: 1em 1.4em 1.25em;
@@ -1230,19 +1234,13 @@ dl.expandable-list dd{
 
 @media all and (min-width: 50em) {
     dl.expandable-list.toc-avoid {
-        width: 64%;
+        width: 63%;
     }
 }
 
 @media all and (min-width: 65.25em) {
     dl.expandable-list.toc-avoid {
-        width: 69%;
-    }
-}
-
-@media all and (min-width: 80em) {
-    dl.expandable-list.toc-avoid {
-        width: 72%;
+        width: 65%;
     }
 }
 
