@@ -643,6 +643,7 @@ display:block;
 
 .expandable-list {
     margin-top: 10px;
+    width: 100%;
 }
 
 /* Checklist CSS */

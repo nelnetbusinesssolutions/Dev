@@ -1,5 +1,56 @@
 <script>
-/* Expandable List Functionality */
+/*Expandable List: Simple */
+$(function() {
+    //Expand/Collapse All Button for Expandable List: Simple*/
+    $('<div class="expand-button"><a class="toggle-all"></a></div>').insertBefore('dl.expand');
+    $('a.toggle-all').text('Expand/Collapse All');
+
+    //On click
+    $("a.toggle-all").on("click", function(e) {
+        e.preventDefault();
+        let target = $(e.target);
+        let targetDL = target.parent().next('.expand');
+        //Count the number of items and the number of open items
+        let openItems = targetDL.children('dt.open');
+        let allItems = targetDL.children('dt');
+        //If less than half of the items are open, open all. Otherwise, close all items.
+        targetDL.children('dt').toggleClass('open', openItems.length <= allItems.length/2);
+        targetDL.children('dd').toggleClass('open', openItems.length <= allItems.length/2);
+        //If the dt has a class of open, change the button aria-expanded attribute to true.
+        //Otherwise, change it to false.
+        if ($('.expand dt').hasClass('open')) {
+            $('.expand dt button').attr('aria-expanded', 'true');
+            $('.expand dt').next('.expand dd').slideDown();
+        } else {
+            $('.expand dt button').attr('aria-expanded', 'false');
+            $('.expand dt').next('.expand dd').slideUp();
+        };
+    });
+
+    //Add button around text in each dt. Add aria attributes to button and dd.
+    $('.expand dt').each(function(index) {
+        $(this).wrapInner( '<button aria-controls="item-' + (index + 1) + '" aria-expanded="false"><span></span></button>' );
+        $(this).next('.expand dd').attr('id', 'item-' + (index + 1));
+    });
+
+    //Add/remove open class on click
+    $('.expand dt').click(function(e) {
+        e.preventDefault();
+        // Add the open class to the clicked dt and corresponding dd
+        $(this).toggleClass('open').next('.expand dd').toggleClass('open');
+        if ( $(this).hasClass('open')) {
+            $(this).children('button').attr('aria-expanded', 'true');
+            $(this).next('.expand dd').slideDown();
+        } else {
+            $(this).children('button').attr('aria-expanded', 'false');
+            $(this).next('.expand dd').slideUp();
+        };
+    });
+
+});
+</script>
+<script>
+/* Expandable List Block Color Functionality */
 
     //Wrap the text of each dt in a button and assign aria values
     $(document).ready(function() {

@@ -1142,11 +1142,68 @@ color:#52c5ce;
     }
 
 
+/*Expandable List: Simple*/
+.expand dt {
+    color: #3473ac;
+    cursor: pointer;
+    padding: 2px 0;
+    overflow: hidden;
+}
 
+.expand dt:hover {
+    color: #52c5ce;
+}
 
+.expand dt button,
+.expand dt button:hover,
+.expand dt button:focus,
+.expand dt button:active {
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    line-height: inherit;
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+}
 
+.expand dt button:focus {
+    outline: 1px dotted #7fc041;
+}
 
-/*Expandable List Behaviour*/
+dl.expand button::before {
+    font: 400 140%/1 icomoon;
+    position: relative;
+    top: .2em;
+    padding-right: 5px;
+    content: '\e893';
+    display: inline-block;
+  }
+
+  dl.expand dt.open button::before {
+      content: '\e892';
+  }
+
+.expand span {
+    min-width: 0;
+    text-align: left;
+}
+
+.expand dd {
+    display: none;
+    padding-left: 2em;
+    margin-top: .75em;
+}
+
+.deki-content-edit .expand dd {
+    display: block;
+}
+
+/*Expandable List Behaviour: Block Color*/
 dl.expandable-list {
     overflow: hidden;
 }
@@ -1229,6 +1286,24 @@ dl.expandable-list dd{
     margin-top: -2px;
     margin-bottom: -2px;
     display:none;
+}
+
+@media all and (min-width: 37.5em) {
+    dl.expandable-list.toc-avoid {
+        width: 60%;
+    }
+}
+
+@media all and (min-width: 50em) {
+    dl.expandable-list.toc-avoid {
+        width: 63%;
+    }
+}
+
+@media all and (min-width: 65.25em) {
+    dl.expandable-list.toc-avoid {
+        width: 65%;
+    }
 }
 
 .deki-content-edit dl.expandable-list dd {
@@ -1409,4 +1484,9 @@ img { vertical-align:text-bottom; }
     @media all and (max-width: 37.5em) {
         clear: both;
     }
+}
+
+/* Hiding Copyright and Safe Harbor Info in QP Release Notes from Website */
+.pdf-only {
+    display: none;
 }
