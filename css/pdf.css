@@ -39,6 +39,10 @@ img[style], img {
      max-width: 100%;
 }
 
+img[src*=".gif"], img[src*=".GIF"] {
+    display: none;
+}
+
 /* cover sheet */
 .idf-toc div.wiki-toc {
     border: 0 !important;
@@ -214,6 +218,7 @@ input[type="submit"].disabled:hover,
 .mt-pdf-hide {
     display: none;
 }
+
 div.page-break {
     page-break-after: always;
 }

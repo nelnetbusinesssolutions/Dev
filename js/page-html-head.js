@@ -18,12 +18,12 @@ $(function() {
         targetDL.children('dd').toggleClass('open', openItems.length <= allItems.length/2);
         //If the dt has a class of open, change the button aria-expanded attribute to true.
         //Otherwise, change it to false.
-        if ($('.expand dt').hasClass('open')) {
-            $('.expand dt button').attr('aria-expanded', 'true');
-            $('.expand dt').next('.expand dd').slideDown();
+        if (targetDL.children('dt').hasClass('open')) {
+            targetDL.children('.expand dt button').attr('aria-expanded', 'true');
+            targetDL.children('.expand dt').next('.expand dd').slideDown();
         } else {
-            $('.expand dt button').attr('aria-expanded', 'false');
-            $('.expand dt').next('.expand dd').slideUp();
+            targetDL.children('.expand dt button').attr('aria-expanded', 'false');
+            targetDL.children('.expand dt').next('.expand dd').slideUp();
         };
     });
 
@@ -192,12 +192,12 @@ $(function() {
             targetDL.children('dd').toggleClass('open', openItems.length <= allItems.length/2);
             //If the dt has a class of open, change the button aria-expanded attribute to true.
             //Otherwise, change it to false.
-            if ($('.expandable-list dt').hasClass('open')) {
-                $('.expandable-list dt button').attr('aria-expanded', 'true');
-                $('.expandable-list dt').next('.expandable-list dd').slideDown();
+            if (targetDL.children('.expandable-list dt').hasClass('open')) {
+                targetDL.children('.expandable-list dt button').attr('aria-expanded', 'true');
+                targetDL.children('.expandable-list dt').next('.expandable-list dd').slideDown();
             } else {
-                $('.expandable-list dt button').attr('aria-expanded', 'false');
-                $('.expandable-list dt').next('.expandable-list dd').slideUp();
+                targetDL.children('.expandable-list dt button').attr('aria-expanded', 'false');
+                targetDL.children('.expandable-list dt').next('.expandable-list dd').slideUp();
             };
         });
     });
