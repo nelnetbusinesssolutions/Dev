@@ -320,6 +320,9 @@ function tooltipMaker (a, b, c) {
     icon.addEventListener('mouseleave', function() {
         tooltip.classList.add('class-tooltip-hidden');
     });
+    if (label == document.querySelector('.mt-overview-label')) {
+        observer.disconnect();
+    }
 }
 
 //Wait for MT to append nodes to .mt-collapsible-section, then create Summary tooltip
