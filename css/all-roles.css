@@ -143,11 +143,7 @@ li.mt-related-listing.mt-related-listing-detailed {
 }
 */
 
-/*Safari Background Picture*/
-.columbia-browser-safari .mt-custom-home {
-    background: url(https://nelnet-dev.mindtouch.us/@api/deki/files/647/banner-grads2.jpg);
-    background-size: cover;
-}
+
 
 .elm-header {
     background: #fff;
@@ -175,12 +171,6 @@ div.elm-header-logo-container {
     background-color: rgb(174, 167, 159);
     cursor: help;
     padding: 2px;
-}
-
-.mt-splash-container {
-    background: url(/@api/deki/files/647/banner-grads2.jpg?origin=mt-web);
-    background-repeat: repeat;
-    background-size: 100% auto;
 }
 
 blockquote {
@@ -523,9 +513,9 @@ body.elm-user-pro-member.columbia-group-pro-admin .mt-new-features-container {
     }
 }
 
-.elm-header-logo-container {
+/*.elm-header-logo-container {
     display: none;
-}
+}*/
 
 .elm-header-custom {
     padding: .9em 0 .9em;
@@ -821,6 +811,11 @@ article.elm-content-container section.mt-content-container .mt-lp-path-container
 /*Links within Articles*/
 article.elm-content-container section.mt-content-container a {
     color: #3473ac;
+    font-weight: 800;
+}
+
+div#cke_editarea_shared_top a {
+    font-weight: normal;
 }
 
 article.elm-content-container section.mt-content-container a:hover, article.elm-content-container section.mt-content-container a:active, article.elm-content-container section.mt-content-container a:hover:visited {
@@ -1490,3 +1485,73 @@ img { vertical-align:text-bottom; }
 .pdf-only {
     display: none;
 }
+
+/* Blue Button Template CSS */
+#elm-main-content .hh-btn, .hh-btn {
+    display: inline-block;
+    color: #ffffff !important;
+    background: #4597cb;
+    box-sizing: border-box;
+    border: 1px solid #4597cb;
+    border-radius: .25em;
+    padding: .5em 1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .025em;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
+    transition: background .2s ease, box-shadow .28s cubic-bezier(.4,0,.2,1);
+}
+
+.no-touch #elm-main-content .hh-btn:hover, .hh-btn:hover {
+    background: #3778a2;
+    border: 1px solid #3778a2;
+    color: #ffffff !important;
+}
+
+/* ***Selectable Styles *** */
+.emphasis {
+    color: darkmagenta;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+/* Blue-Rows Table */
+table.blue-rows {
+    border: 1px solid #F8F8F8;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.blue-rows td, table.blue-rows th {
+    border: 1px solid #D0D0D0;
+}
+
+table.blue-rows tr:nth-child(even) td {
+    background: #E4F0FF;
+}
+
+table.blue-rows thead th {
+    background: #3C72C3;
+    border-bottom: 3px solid #D0D0D0;
+}
+
+table.blue-rows thead th {
+    font-weight: bold;
+    color: #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+}
+
+table.blue-rows thead th:first-child {
+    border-left: none;
+}
+
+.no-touch table.blue-rows tr:hover, .no-touch table.blue-rows tr:hover td {
+    background: #ffffff;
+}
+
+.no-touch table.blue-rows tr:nth-child(even):hover, .no-touch table.blue-rows tr:nth-child(even):hover td {
+    background: #E4F0FF;
+}
+
+/* End Selectable Styles */

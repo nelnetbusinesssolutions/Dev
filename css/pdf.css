@@ -593,6 +593,9 @@ dd {
     background-image: url(/@api/deki/files/409/Notes_Caution_icon.png?origin=mt-web);
 
 }
+.tip {
+    background-image: url(/@api/deki/files/606/Tip_icon.png?origin=mt-web);
+}
 
 .important {
     overflow: hidden;
@@ -609,7 +612,7 @@ dd {
 }
 
 
-.note-blank {
+.note-blank, .tip {
     overflow: hidden;
     padding: 20px 20px 20px 80px;
     border-radius: 6px;
