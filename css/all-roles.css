@@ -479,9 +479,13 @@ body.elm-user-pro-member.columbia-article-topic-guide.columbia-group-pro-admin l
     display: block;
 }
 
-/* Hides attachments for pro-viewers*/
+/* Hides attachments for pro-viewers except STIC members*/
 body.elm-user-pro-member.columbia-group-pro-viewer .elm-attachments {
     display: none;
+}
+
+body.elm-user-pro-member.columbia-group-stic .elm-attachments {
+    display: block;
 }
 
 /*Hide Search Bar for initial login*/
@@ -1531,19 +1535,23 @@ table.blue-rows tr:nth-child(even) td {
     background: #E4F0FF;
 }
 
-table.blue-rows thead th {
+table.blue-rows th {
     background: #3C72C3;
-    border-bottom: 3px solid #D0D0D0;
+    border-bottom: 2px solid #FFFFFF;
+    font-weight: bold;
+    color: #FFFFFF;
 }
 
 table.blue-rows thead th {
-    font-weight: bold;
-    color: #FFFFFF;
     border-left: 2px solid #FFFFFF;
 }
 
 table.blue-rows thead th:first-child {
     border-left: none;
+}
+
+table.blue-rows tbody th {
+    border-bottom: 2px solid #FFFFFF;
 }
 
 .no-touch table.blue-rows tr:hover, .no-touch table.blue-rows tr:hover td {
