@@ -1,6 +1,3 @@
-/* Polyfill for ES6 and fetch */
-<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2Cfetch"></script>
-
 <script>
 /*Expandable List: Simple */
 $(function() {
@@ -403,3 +400,7 @@ window.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+/* Polyfill for ES6 and fetch */
+//Keep this at the end of the head to avoid breaking other scripts
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2Cfetch"></script>
