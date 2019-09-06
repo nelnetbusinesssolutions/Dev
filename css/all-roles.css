@@ -813,7 +813,8 @@ article.elm-content-container section.mt-content-container .mt-lp-path-container
 }*/
 
 /*Links within Articles*/
-article.elm-content-container section.mt-content-container a {
+article.elm-content-container section.mt-content-container a,
+div.mt-content-container a {
     color: #3473ac;
     font-weight: 800;
 }
