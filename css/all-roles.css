@@ -2,7 +2,6 @@ body.columbia-learning-path .elm-related-articles-container {
   display: none;
 }
 
-
 @highlight-color: #7fc041;
 
 /*Fixing Search Fields*/
@@ -1486,7 +1485,7 @@ img { vertical-align:text-bottom; }
     }
 }
 
-/* Hiding Copyright and Safe Harbor Info in QP Release Notes from Website */
+/* Hiding Copyright and Safe Harbor Info from Website */
 .pdf-only {
     display: none;
 }
