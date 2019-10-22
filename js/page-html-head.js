@@ -149,7 +149,7 @@ $(function() {
 
 
         $(".mt-lp-progress-bar li").each(function(i) {
-            $(this).append('<div class="number">' + (++i) + "</div>");
+            $(this).find('.mt-icon-progress-indicator').append('<div class="number">' + (++i) + "</div>");
         });
 
         $(document).on("click", ".mt-lp-progress-bar li .number", function() {
