@@ -2,7 +2,7 @@
 <script>
     $(document).ready(function() {
         //Remove Previous Cookie Here
-        $.removeCookie('aug-cookie', {
+        $.removeCookie('nov-cookie', {
             expires: 365,
             path: '/',
             domain: 'nelnet-dev.mindtouch.us'
@@ -11,7 +11,7 @@
         $(".header-links #whats-new").click(function() {
             $(".cookie-message, img.badger, img.menu-badger").css("display", "none");
             //Add New Cookie Here
-            $.cookie('mytest-cookie', true, {
+            $.cookie('newtest-cookie', true, {
                 expires: 365,
                 path: '/',
                 domain: 'nelnet-dev.mindtouch.us'
@@ -20,7 +20,7 @@
 
         $(function() {
             //Add New Cookie Here Too
-            if (!$.cookie('mytest-cookie')) {
+            if (!$.cookie('newtest-cookie')) {
                 $(".cookie-message, img.menu-badger").css("display", "block");
                 $("img.badger").css("display", "inline-block");
             }

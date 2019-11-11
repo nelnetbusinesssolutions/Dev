@@ -75,8 +75,9 @@ img[style], img {
 
 /*Page Access Flag*/
 .mt-permission-indicator {
-    background-color: #deefcf;
-    border: 1px solid #7fc041;
+    background-color: #b13a69;
+    border: 1px solid #591d35;
+    color: #fff;
     width: 200px;
     border-radius: 3px;
     text-align: center;
@@ -586,11 +587,11 @@ dd {
 /*notes and important notices*/
 
 .note-blank {
-    background-image: url(/@api/deki/files/577/NoteIcon.png?origin=mt-web);
+    background-image: url(/@api/deki/files/404/Note_Icon_2019.png?origin=mt-web);
 }
 
 .important {
-    background-image: url(/@api/deki/files/409/Notes_Caution_icon.png?origin=mt-web);
+    background-image: url(/@api/deki/files/409/Alert_Icon_2019.png?origin=mt-web);
 
 }
 .tip {
@@ -620,9 +621,16 @@ dd {
     background-color: #FFF;
     background-repeat: no-repeat;
     background-position: 15px 10px!important;
-    border: 1px solid #8A8C8E;
     min-height: 30px;
-} 
+}
+
+.tip {
+    border: 1px solid #8A8C8E;
+}
+
+.note-blank {
+    border: 1px solid #89af65;
+}
 
 ul.checkbox-list li:before
 {
