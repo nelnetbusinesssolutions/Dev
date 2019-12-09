@@ -16,6 +16,42 @@
      display: block;
 }
 
+/*Tree styling for modals (move page, add page to path, add image etc.)*/
+.mt-tree-node .fancytree-node {
+    &,
+    &.fancytree-active,
+    &.fancytree-focused,
+    &.fancytree-selected {
+        span {
+            color: @gray-4;
+        }
+    }
+
+    .no-touch &:hover,
+    .no-touch &:hover span {
+        color: @yellow-2;
+    }
+}
+
+/*Page Classification Drop-Down Colors*/
+select.mt-select-box {
+    color: @gray-4;
+
+    & + .mt-select-box-arrow:after {
+        color: @gray-4;
+    }
+
+    &:focus,
+    &:active,
+    .no-touch &:hover {
+        color: @gray-4;
+
+        & + .mt-select-box-arrow:after {
+            color: @gray-4;
+        }
+    }
+}
+
 /*** Styles for Page Settings Classification Tooltips ***/
 #live-tags-custom .mt-icon-question2, #live-tag-input-area .mt-icon-question2, .mt-overview-container .mt-icon-question2 {
     float: left;
@@ -23,7 +59,7 @@
 }
 
 #live-tags-custom .mt-icon-question2:hover:before, #live-tag-input-area .mt-icon-question2:hover:before, .mt-overview-container .mt-icon-question2:hover:before {
-    color: #52c5ce;
+    color: @blue-6;
 }
 
 .live-tag-special-section, #live-tag-normal-tags {

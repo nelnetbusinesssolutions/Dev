@@ -21,6 +21,7 @@
 .mt-custom-home {
     background: @blue-4;
     border: none;
+    padding: 1em 1.3em 2.5em;
 
     /*Adjusting Safari background*/
     .columbia-browser-safari & {
@@ -100,7 +101,6 @@ body.elm-user-pro-member.columbia-group-pro-draft li.mt-page-options {
 .header-links {
     text-align: right;
     background: @gray-10;
-    border-top: 1px solid #000;
     border-bottom: 1px solid @blue-4;
     width: 100%;
 
@@ -258,6 +258,7 @@ img.menu.badger {
     /* Close button */
     .mt-icon-close {
         align-self: flex-end;
+        flex-shrink: 0;
         background: none;
         border: none;
         color: #000;
@@ -540,7 +541,7 @@ div.span-container {
         width: 300px;
 
         li.first span.link-span {
-            max-width: 80%;
+            max-width: 70%;
         }
     }
 
@@ -553,7 +554,7 @@ div.span-container {
     .elm-skin-container.menu-open #elm-main-content {
         padding: 1.3rem;
         min-width: 70em;
-        width: 100&;
+        width: 100%;
     }
 }
 
@@ -860,8 +861,19 @@ blockquote {
     padding: .25em;
 }
 
-.columbia-article-topic #elm-main-content {
+.columbia-article-topic #elm-main-content,
+.columbia-article-reference #elm-main-content,
+.columbia-article-howto #elm-main-content,
+.columbia-article-topic-video #elm-main-content {
     color: @gray-2;
+
+    h1 {
+        color: #000;
+
+        & span[class^="mt-icon"]:before {
+            color: #000;
+        }
+    }
 
     h4 {
         color: @pink-2;
@@ -879,11 +891,11 @@ h6 {
 /*Links within Articles*/
 article.elm-content-container section.mt-content-container a,
 div.mt-content-container a {
-    color: @blue-5;
+    color: @blue-link;
     font-weight: 800;
 
     &:hover {
-        color: @blue-6;
+        color: @blue-4;
     }
 }
 
@@ -901,16 +913,27 @@ img {
     vertical-align:text-bottom;
 }
 
+/*Last Updated*/
+.elm-meta-top {
+    color: @gray-4;
+}
+
 /*Page Summary/Overview*/
 .mt-page-overview.hh-overview {
-    .columbia-article-topic & {
-        border: 1px dotted @gray-4;
+    .columbia-article-topic &,
+    .columbia-article-howto &,
+    .columbia-article-reference &,
+    .columbia-article-video & {
+        border: 1.4px dotted @gray-4;
         border-left: 24px solid @gray-4;
         border-radius: .25em;
         padding: .5em;
     }
 
-    .columbia-article-topic table & {
+    .columbia-article-topic table &,
+    .columbia-article-howto table &,
+    .columbia-article-reference table &,
+    .columbia-article-topic-video table & {
         border: none;
         border-radius: 0;
         padding: inherit;
@@ -1129,20 +1152,20 @@ body.elm-user-pro-member .mt-sortable-listing:focus,
 /*****Content Templates*****/
 /* Note, Important, Tip Callouts */
 .note-blank {
-    background-image: url(/@api/deki/files/404/Note_Icon_2019.png?origin=mt-web);
+    background-image: url(/@api/deki/files/577/Note_Icon_2019.png?origin=mt-web);
     background-color: #fff;
     border: 1px solid @green-5;
 }
 
 .important {
-    background-image: url(/@api/deki/files/409/Alert_Icon_2019.png?origin=mt-web);
+    background-image: url(/@api/deki/files/583/Alert_Icon_2019.png?origin=mt-web);
     background-color: @gray-11;
     filter: alpha(opacity=60);
     box-shadow: .1em .1em .5em @gray-6;
 }
 
 .tip {
-    background-image: url(/@api/deki/files/606/Tip_icon.png?origin=mt-web);
+    background-image: url(/@api/deki/files/8879/Tip_Icon_2019.png?origin=mt-web);
     background-color: #fff;
     border: 1px solid @gray-5;
 }
@@ -1451,6 +1474,11 @@ body.columbia-group-pro-admin .elm-attachments {
 }
 
 /*****Feedback*****/
+/*Hiding message after rating button clicked*/
+.mt-last-rating-date.mt-feedback-rating-item {
+    display: none;
+}
+
 /* Add feedback to video type articles*/
 .columbia-article-topic-video .mt-feedback-rating-container {
     display: block;
@@ -1635,6 +1663,27 @@ body.elm-user-pro-member.columbia-group-pro-admin .mt-new-features-container {
     color: @blue-5;
 }
 
+/*Empty Category/Guide Message*/
+article.elm-content-container section.mt-content-container .mt-empty-listings-message a {
+    color: #fff;
+}
+
+/*Correct help link color in modals*/
+.mt-modal .mt-f1-link {
+    color: @blue-5;
+
+    &:active,
+    &:focus,
+    &:visited {
+        color: @blue-5;
+    }
+
+    .no-touch &:hover {
+        color: @blue-6;
+    }
+}
+
+
 /*****Welcome Page*****/
 .mt-welcome-redirect:before {
     content: '\e613';
@@ -1642,6 +1691,16 @@ body.elm-user-pro-member.columbia-group-pro-admin .mt-new-features-container {
 
 .mt-f1-container {
     max-width: 350px;
+}
+
+.mt-welcome {
+    h2 {
+        color: #fff;
+    }
+
+    .mt-welcome-continue a:before {
+        color: @blue-5;
+    }
 }
 
 /*****Learning Paths*****/
@@ -1974,7 +2033,7 @@ table.blue-rows {
 }
 
 #user-history-top-control a, #user-history-top-control a:visited {
-    color: #3473ac;
+    color: @blue-5;
 }
 
 #user-history-top-control #user-history-uparrow {
@@ -1982,13 +2041,15 @@ table.blue-rows {
 }
 
 .no-touch .ui-state-hover a:hover, .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited, .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, .ui-state-error a, .ui-state-highlight a, .ui-state-hover a, .ui-state-hover a:link, .ui-state-hover a:visited, .ui-widget-content .ui-state-error a, .ui-widget-content .ui-state-highlight a, .ui-widget-content a, .ui-widget-header .ui-state-error a, .ui-widget-header .ui-state-highlight a, .ui-widget-header a {
-    color: #3473ac;
+    color: @blue-5;
 }
 
 /*****MT Variables*****/
 @highlight-color: @yellow-4;
 
 @primary-font-color: @gray-2;
+@tertiary-font-color: @gray-4;
+@quaternary-font-color: @gray-4;
 
 /*Link Variables*/
 @primary-link-color: @blue-5;
@@ -2041,6 +2102,7 @@ table.blue-rows {
 @blue-9: #d8e2e6;
 @blue-10: #e2e9ec;
 @blue-11: #ebf1f3;
+@blue-link: #3473ac;
 
 @green-1: #1b2710;
 @green-2: #364e1f;

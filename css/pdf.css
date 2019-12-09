@@ -677,3 +677,10 @@ display:block;
 a {
     font-weight: 800;
 }
+
+/* Wrong Area Banner */
+.content-banner p {
+    border: 1px solid #b13a69;
+    padding: 4px;
+    border-radius: .25em;
+}
