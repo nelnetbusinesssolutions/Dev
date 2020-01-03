@@ -21,3 +21,8 @@ margin-bottom: 0;
 padding-bottom: 5px;
 }
 }
+
+/*Hide file attachments from search results.*/
+#mt-search-results li.type-file {
+    display: none;
+}

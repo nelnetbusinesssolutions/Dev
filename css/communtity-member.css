@@ -37,3 +37,8 @@ body.elm-user-pro-member.columbia-group-pro-viewer .elm-attachments .a.mt-icon-p
 nav.elm-header-user-nav.elm-nav {
     display: block;
 }
+
+/*Hide file attachments from search results.*/
+#mt-search-results li.type-file {
+    display: none;
+}

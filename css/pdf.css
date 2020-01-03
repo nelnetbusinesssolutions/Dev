@@ -339,7 +339,6 @@ input[type="submit"].disabled:hover,
 
 /*headers*/
 h1, h2, h3, h4, h5, h6 {
-    color: #476F8A;
     font-family: arial, helvetica, sans-serif, 'arial unicode ms';
     font-weight: normal!important;
     line-height: 1;
@@ -347,6 +346,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 10px;
     padding: 0.375em 0 0;
     page-break-after: avoid;
+}
+
+h1, h2 {
+    color: #094a64;
 }
 
 h2 {
@@ -360,23 +363,20 @@ h3 {
     font-size: 1.7em!important;
 }
 h4 {
-    color: #000;
     display: block;
     font-size: 1.5em!important;
 }
 h5 {
-    color: #000;
     font-size: 1.3em!important;
 }
 
 h6 {
-    color: #000;
     font-size: 1.1em!important;
 }
 
 /* images */
 img {
-    display: block;
+    display: inline-block;
     margin-top: .75em;
     max-width: 7in;
 }

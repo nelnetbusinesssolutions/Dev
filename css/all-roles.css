@@ -18,6 +18,113 @@
 }
 
 /* Homepage Search Area */
+/*Hide the default search bar*/
+.mt-inputredirect {
+    display: none;
+}
+
+form#tz-search {
+    width: 60%;
+    margin: 0 auto;
+
+    select#tz-search-category-selector {
+        height: 3em;
+        background: @pink-3;
+        color: #fff;
+        padding: 0 1.5em 0 .5em;
+        border-radius: .25em 0 0 .25em;
+        border: 0;
+        cursor: pointer;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+
+        option {
+            background: #fff;
+            color: #000;
+        }
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+
+    div.mt-icon-selector-arrow {
+        display: inline-block;
+        position: relative;
+        width: 25%;
+
+        &:after {
+            content: '\e8dd';
+            color: #fff;
+            position: absolute;
+            right: .5em;
+            top: 1em;
+            pointer-events: none;
+        }
+    }
+
+    input#tz-search-input {
+        width: 75%;
+        height: 3em;
+        padding: 0 .5em;
+        -webkit-appearance: none;
+        border-radius: 0 .25em .25em 0;
+        box-sizing: border-box;
+
+        &[placeholder] {
+            text-overflow: ellipsis;
+        }
+    }
+
+    button#tz-search-submit {
+        position: absolute;
+        height: 3em;
+        background: none;
+        border: 0;
+        color: @blue-4;
+        right: 21%;
+
+        &:hover,
+        &:active,
+        &:focus {
+            border: 0;
+            box-shadow: none;
+        }
+    }
+}
+
+@media all and (max-width: 65.25em) {
+    form#tz-search {
+        width: 70%;
+
+        button#tz-search-submit {
+            right: 16%;
+        }
+    }
+}
+
+@media all and (max-width: 50em) {
+    form#tz-search {
+        width: 90%;
+
+        button#tz-search-submit {
+            right: 8%;
+        }
+    }
+}
+
+@media all and (max-width: 25em) {
+    form#tz-search {
+        div.mt-icon-selector-arrow {
+            width: 35%;
+        }
+
+        input#tz-search-input {
+            width: 65%;
+        }
+    }
+}
+
 .mt-custom-home {
     background: @blue-4;
     border: none;
@@ -60,16 +167,16 @@
         color: #fff;
     }
 
-    .no-touch & .mt-dropdown a {
-        color: @blue-4;
-
-        &:hover {
-            color: @blue-5;
-        }
-    }
-
     a, a:visited {
         color: #fff;
+    }
+
+    .mt-dropdown a {
+        color: @blue-4;
+
+        .no-touch &:hover {
+            color: @blue-5;
+        }
     }
 }
 
@@ -171,6 +278,7 @@ body.elm-user-pro-member.columbia-group-pro-draft li.mt-page-options {
 
         .header-links-detail.hidden-mobile {
             height: 0px;
+            margin-top: 0;
         }
 
         .header-links-detail > ol {
@@ -207,12 +315,15 @@ img.menu.badger {
 
 @media all and (max-width: 80em) {
     img.badger {
-        max-height: 14px;
+        max-height: 16px;
         margin-right: -16px;
     }
+}
 
-    img.menu.badger {
-        max-height: 16px;
+@media all and (max-width: 975px) {
+    img.badger.ie-fixer {
+        max-height: 14px;
+        margin-right: -14px;
     }
 }
 
@@ -246,6 +357,8 @@ img.menu.badger {
 
 #tz-menu {
     position: fixed;
+    display: flex;
+    justify-content: space-between;
     z-index: 10000;
     top: -1em;
     width: 325px;
@@ -253,6 +366,31 @@ img.menu.badger {
 
     &.hidden {
         width: 0;
+
+        #expander {
+            display: none;
+        }
+    }
+
+    /* Expand/collapse menu */
+    #expander {
+        height: 110px;
+        padding: 10px 5px;
+        cursor: pointer;
+        background: #c2c2c2;
+        position: absolute;
+        left: 99.5%;
+        bottom: 50%;
+        writing-mode: vertical-rl;
+        font-family: Lato, Arial, sans-serif;
+        font-weight: bold;
+        text-align: center;
+        border: 1px solid #fff;
+        border-left: 0;
+    }
+
+    &.user-expanded {
+        width: 50%;
     }
 
     /* Close button */
@@ -334,6 +472,7 @@ img.menu.badger {
         display: flex;
         flex-direction: column;
         border-right: 1px solid #fff;
+        width: 100%;
     }
 
     ul {
@@ -491,9 +630,23 @@ div.span-container {
     }
 }
 
+@media all and (max-width: 50em) {
+    #tz-menu.user-expanded {
+        width: 75%;
+    }
+}
+
 @media all and (max-width: 37.5em) {
     #tz-menu {
         width: 100%;
+
+        &.user-expanded {
+            width: 100%;
+        }
+
+        #expander {
+            display: none;
+        }
     }
 
     .elm-skin-container.menu-open {
@@ -603,6 +756,18 @@ div.span-container {
 }
 
 /*****Search*****/
+/*Hide no results text*/
+.type-empty p {
+    visibility: hidden;
+    font-size: 0;
+
+    &:before {
+        content: 'Try a new search.';
+        visibility: visible;
+        font-size: 16px;
+    }
+}
+
 /*Hide Search Bar for initial login*/
 body.columbia-special-firstloginwelcome ol li.elm-global-search {
     visibility: hidden;
@@ -699,6 +864,23 @@ a.mt-f1-success.mt-f1-link.mt-icon-f1-link.mt-f1-search {
 .mt-help-breadcrumb-label {
     font-weight: normal;
     margin-right: .3em;
+}
+
+
+/*Show more results button*/
+.help-show-more.ui-button {
+    background: @blue-4;
+    color: #fff;
+    border-color: @blue-4;
+
+    .no-touch &:hover,
+    &:active,
+    &:focus {
+        background: #3a6e83;
+        border-color: #3a6e83;
+        color: #fff;
+        box-shadow: none;
+    }
 }
 
 /*****Guide Tabs*****/
@@ -882,10 +1064,27 @@ blockquote {
     h5, h6 {
         color: @pink-3;
     }
+
+    .mt-content-container ol ol {
+        list-style: lower-alpha;
+    }
 }
 
 h6 {
     font-weight: normal;
+}
+
+h4, h5, h6 {
+    & + p {
+        margin-top: .5rem;
+    }
+}
+
+/*In the editor*/
+.cke_editable {
+    ol ol {
+        list-style: lower-alpha;
+    }
 }
 
 /*Links within Articles*/
@@ -923,7 +1122,7 @@ img {
     .columbia-article-topic &,
     .columbia-article-howto &,
     .columbia-article-reference &,
-    .columbia-article-video & {
+    .columbia-article-topic-video & {
         border: 1.4px dotted @gray-4;
         border-left: 24px solid @gray-4;
         border-radius: .25em;
@@ -1003,6 +1202,44 @@ dl.mt-listing-detailed dd button.mt-icon-expand-collapse {
 
 dl.mt-listing-detailed dd button.mt-icon-expand-collapse:hover {
     color: @blue-5;
+}
+
+/*Show all/show less text and icon in categories*/
+.mt-reveal-listing-expand-link {
+    width: auto;
+    height: auto;
+    font-size: 1rem;
+
+    &:before {
+        content: '';
+    }
+
+    &:after {
+        margin-left: .5rem;
+        position: relative;
+        top: .1rem;
+        font-size: .8rem;
+
+        body.columbia-browser-firefox & {
+            align-self: center;
+        }
+    }
+
+    &[title="Show all"]:after {
+        content: '\e8e9';
+    }
+
+    &[title="Show less"]:after {
+        content: '\e8ea';
+    }
+
+    .no-touch &:hover,
+    &:active,
+    &:focus {
+        width: auto;
+        height: auto;
+        font-size: 1rem;
+    }
 }
 
 /*Category Icons (marbles)*/
@@ -1158,7 +1395,7 @@ body.elm-user-pro-member .mt-sortable-listing:focus,
 }
 
 .important {
-    background-image: url(/@api/deki/files/583/Alert_Icon_2019.png?origin=mt-web);
+    background-image: url(/@api/deki/files/409/Alert_Icon_2019.png?origin=mt-web);
     background-color: @gray-11;
     filter: alpha(opacity=60);
     box-shadow: .1em .1em .5em @gray-6;
@@ -1270,6 +1507,14 @@ body.elm-user-pro-member .mt-sortable-listing:focus,
         .deki-content-edit & {
             display: block;
         }
+
+        p:first-child {
+            margin-top: 0;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -1361,6 +1606,14 @@ dl.expandable-list {
         .deki-content-edit & {
             display: block;
         }
+
+        p:first-child {
+            margin-top: 0;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -1379,6 +1632,16 @@ dl.expandable-list {
 @media all and (min-width: 65.25em) {
     dl.expandable-list.toc-avoid {
         width: 65%;
+    }
+}
+
+/*Make sure pagination links display in QP dot release article */
+.columbia-article-topic-qpinternadotreleases,
+.columbia-article-topic-qpexternaldotreleases,
+.columbia-article-topic-releasenotes {
+    .mt-article-pagination,
+    .elm-meta-article-navigation {
+        display: block !important;
     }
 }
 
