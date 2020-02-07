@@ -146,7 +146,13 @@ $(function() {
             }
         });
 
-
+        //Styling sign in page
+        if ($('.columbia-special-userlogin').length) {
+            $('.columbia-special-userlogin .mt-login-skin-template').insertBefore('#SpecialUserlogin');
+            $('.columbia-special-userlogin #widget-login-panel #text-username').after('<p class="login-instructions">Contact the site admin if you do not recall your username.</p>');
+            $('.columbia-special-userlogin #widget-login-panel #password-password').after('<p class="login-instructions">Click the Password reset tab if you do not recall your password.</p>');
+            $('.columbia-special-userlogin #widget-login-panel #mt-login-form').append('<p class="browsers">Supported browsers: <br />IE 11, IE Edge, Chrome, Firefox, Safari</p>');
+        }
 
         $(".mt-lp-progress-bar li").each(function(i) {
             $(this).find('.mt-icon-progress-indicator').append('<div class="number">' + (++i) + "</div>");
@@ -160,14 +166,52 @@ $(function() {
             $(this).closest('li').find('span').toggleClass('j-border');
         });
 
-
+        if ($('.mt-lp-progress-container').length) {
+            var urlParams = new URLSearchParams(window.location.search);
+            var lpName = urlParams.get('mt-learningpath');
+            var authUrl = $('.platform').text();
+        }
 
         $(".mt-lp-progress-bar").each(function(i) {
             $('.mt-lp-progress-container').insertBefore('h1#title');
             $(".mt-lp-progress-bar").before('<p class="desktop-verb">You are viewing a collection of pages. Click the numbered circles to navigate between pages or click the previous/next article titles.</p>', '<p class="mobile-verb">You are viewing a collection of pages. Click the circles to navigate between pages or click the previous/next article titles.</p>');
             $('.mt-lp-path-meta-data').prependTo('.mt-lp-progress-container');
+            $('.mt-lp-path-meta-data').append('<a class="mt-icon-paperplane" href="mailto:?Subject=Learning%20Path%20Resource&body=' + authUrl + '/@go/path/' + lpName + '">Email path</a>');
             $(".mt-lp-path-meta-data .mt-lp-progress-description").html($(".mt-lp-path-meta-data .mt-lp-progress-description").html().replace("step", "page"));
         });
+
+        if ($('.mt-guide-tabs-container').length) {
+            $('li.mt-guide-tab').click(function (tab) {
+                createMutationObserver(checkForLP, $('.mt-guide-tabs-container')[0], {
+                    childList: true,
+                    subtree: true
+                });
+            });
+        }
+
+        function checkForLP(mutations, observer) {
+            observer.disconnect();
+            if ($('.mt-lp-pages-container').length) {
+                $('.mt-lp-pages-container').each(function (index, div) {
+                    if (!$(div).find('a.mt-icon-paperplane').length) {
+                        let lpLink = $(div).find('a[data-ga-label="Learning path link"]');
+                        let lpLinkHref = lpLink.attr('href');
+                        let lpLinkArray = lpLinkHref.split('/');
+                        let lpName = lpLinkArray[lpLinkArray.length - 1];
+                        let authUrl = $('.platform').text();
+                        lpLink.parent('.mt-listing-detailed-title').append('<a class="mt-icon-paperplane" href="mailto:?Subject=Learning%20Path%20Resource&body=' + authUrl + lpName + '">Email path</a>');
+                    }
+                });
+            }
+        }
+
+        function createMutationObserver(callback, node, settings) {
+            if (window.MutationObserver) {
+                var observer = new MutationObserver(callback);
+                observer.observe(node, settings);
+            }
+        }
+
     });
 </script>
 
@@ -211,6 +255,8 @@ $('.mt-carousel-helper-text').html('Refine results by selecting a filter or ente
 
 $('<div>Refine results by selecting a filter or changing the search terms.</div>').appendTo('.mt-help-breadcrumb-container.mt-search-breadcrumb-widget');
 
+//Add arrow icon to external links
+$('a[rel="external nofollow"]').append('<span class="mt-icon-newtab"></span>');
 });
 
 

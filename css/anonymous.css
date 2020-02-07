@@ -1,3 +1,4 @@
+/*****Login Screen*****/
 /*Removes search bar from login screen */
 .elm-header-user-nav {
 display: none;
@@ -6,6 +7,96 @@ display: none;
 /*Removes header links from login screen*/
 .elm-nav.header-links {
     display: none;
+}
+
+/* Split screen left/right*/
+.columbia-special-userlogin {
+    h1#title {
+        display: none;
+    }
+
+    .mt-content-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .mt-login-skin-template {
+        max-width: 50%;
+    }
+
+    #SpecialUserlogin {
+        width: 50%;
+    }
+
+    .ui-tabs {
+        border: 0;
+    }
+
+    .ui-tabs-nav {
+        background: none;
+    }
+
+    .ui-tabs-nav li.ui-state-default {
+        background: @blue-4;
+
+        a {
+            color: #fff;
+        }
+
+        &:hover {
+            background: @blue-7;
+            border-color: @blue-4;
+
+            a {
+                color: @blue-4;
+            }
+        }
+    }
+
+    .ui-tabs-panel {
+        border: 1px solid @blue-4;
+        border-top: 0;
+        background: @blue-7;
+
+        button {
+            background: @yellow-4;
+            color: @blue-4;
+            border: 0;
+        }
+    }
+
+    .ui-tabs-nav li.ui-state-active,
+    .ui-tabs-nav li.ui-state-active:hover {
+
+    }
+
+    .ui-tabs-nav li.ui-state-active {
+        background: @blue-7;
+        border-color: @blue-4;
+
+        &:hover {
+            background: @blue-7;
+        }
+
+        a {
+            color: @blue-4;
+        }
+    }
+
+    .login-instructions {
+        font-size: 90%;
+        margin: 0;
+    }
+
+    .browsers {
+        order: 5;
+        margin: 0 1em 1.5em;
+        color: @blue-4;
+    }
+
+    label {
+        color: @blue-4;
+    }
 }
 
 /*I.E. Login Fix*/

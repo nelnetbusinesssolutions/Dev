@@ -382,6 +382,10 @@ img {
 }
 
 /* lists */
+ol ol {
+    list-style: lower-alpha;
+}
+
 ol,
 ul,
 dd {

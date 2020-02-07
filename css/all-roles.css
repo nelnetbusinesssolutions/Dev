@@ -74,6 +74,15 @@ form#tz-search {
         &[placeholder] {
             text-overflow: ellipsis;
         }
+
+        &::-ms-clear, &::-ms-reveal {
+            display: none;
+        }
+
+        &:hover + button#tz-search-submit,
+        &:focus+ button#tz-search-submit {
+            color: @yellow-4;
+        }
     }
 
     button#tz-search-submit {
@@ -89,6 +98,7 @@ form#tz-search {
         &:focus {
             border: 0;
             box-shadow: none;
+            color: @yellow-4;
         }
     }
 }
@@ -381,6 +391,7 @@ img.menu.badger {
         position: absolute;
         left: 99.5%;
         bottom: 50%;
+        -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
         font-family: Lato, Arial, sans-serif;
         font-weight: bold;
@@ -391,6 +402,10 @@ img.menu.badger {
 
     &.user-expanded {
         width: 50%;
+
+        &.hidden {
+            width: 0;
+        }
     }
 
     /* Close button */
@@ -761,6 +776,10 @@ div.span-container {
     visibility: hidden;
     font-size: 0;
 
+    .columbia-browser-msie11 & {
+        visibility: visible;
+    }
+
     &:before {
         content: 'Try a new search.';
         visibility: visible;
@@ -1096,6 +1115,11 @@ div.mt-content-container a {
     &:hover {
         color: @blue-4;
     }
+
+    &.external .mt-icon-newtab,
+    &.link-https .mt-icon-newtab {
+        margin: auto 4px;
+    }
 }
 
 div#cke_editarea_shared_top a {
@@ -1205,6 +1229,7 @@ dl.mt-listing-detailed dd button.mt-icon-expand-collapse:hover {
 }
 
 /*Show all/show less text and icon in categories*/
+.mt-guide-tabs-container .mt-reveal-listing-expand-link,
 .mt-reveal-listing-expand-link {
     width: auto;
     height: auto;
@@ -1662,6 +1687,10 @@ body.cke_editable .mt-style-conditional hr, .mt-style-conditional hr, .mt-style-
     border: 3px solid #B74E29 !important;
 }
 
+.mt-style-conditional .mt-video-widget iframe {
+    border: 5px solid #B74E29;
+}
+
 /*Learning Path Description Conditional Text*/
 .mt-style-conditional .mt-listing-detailed-overview {
     color: #B74E29;
@@ -1704,6 +1733,10 @@ body.cke_editable .mt-style-conditional hr, .mt-style-conditional hr, .mt-style-
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+}
+
+.columbia-learning-path .elm-meta-article-navigation .elm-back-to-top {
+    display: inline-block;
 }
 
 /*Responsive Mode Back to Top*/
@@ -1892,8 +1925,9 @@ footer.elm-footer nav.elm-footer-siteinfo-nav.elm-nav ol li.elm-footer-powered-b
 }
 
 /*****Admin and Author Tools*****/
-/* Correct live notice link color */
-.elm-live-notice {
+/* Correct live notice and broken link warning link color */
+.elm-live-notice,
+.mt-page-health-container.mt-page-health-error {
     a, a:visited, a:active {
         color: @blue-5;
     }
@@ -1901,6 +1935,30 @@ footer.elm-footer nav.elm-footer-siteinfo-nav.elm-nav ol li.elm-footer-powered-b
     .no-touch & a:hover, a:focus {
         color: @blue-6;
     }
+}
+
+/* Correct link color for Site Structure Analysis Report */
+#mt-site-health-table {
+    a, a:visited, a:active {
+        color: @blue-4;
+
+        & span {
+            color: @blue-4;
+        }
+    }
+
+    .no-touch & a:hover, a:focus {
+        color: @blue-5;
+
+        & span {
+            color: @blue-5;
+        }
+    }
+}
+
+/* Correct button font for Search Insights Report */
+.mt-search-insights-filters li.highlight {
+    color: #fff;
 }
 
 /* Add export button to Page Classification Manager */
