@@ -38,7 +38,8 @@ nav.elm-header-user-nav.elm-nav {
     display: block;
 }
 
-/*Hide file attachments from search results.*/
-#mt-search-results li.type-file {
+/*Hide file attachments and classification filters from search results.*/
+.mt-search-filters-option-attachments,
+.mt-search-filters-option-classifications {
     display: none;
 }

@@ -18,14 +18,12 @@ display: none;
     .mt-content-container {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
-    .mt-login-skin-template {
-        max-width: 50%;
-    }
-
+    .mt-login-skin-template,
     #SpecialUserlogin {
-        width: 50%;
+        max-width: 50%;
     }
 
     .ui-tabs {
@@ -36,7 +34,7 @@ display: none;
         background: none;
     }
 
-    .ui-tabs-nav li.ui-state-default {
+    .ui-tabs.mt-tabs .ui-tabs-nav li.ui-state-default {
         background: @blue-4;
 
         a {
@@ -61,16 +59,12 @@ display: none;
         button {
             background: @yellow-4;
             color: @blue-4;
-            border: 0;
+            font-weight: bold;
+            border: 1px solid @blue-4;
         }
     }
 
-    .ui-tabs-nav li.ui-state-active,
-    .ui-tabs-nav li.ui-state-active:hover {
-
-    }
-
-    .ui-tabs-nav li.ui-state-active {
+    .ui-tabs.mt-tabs .ui-tabs-nav li.ui-state-active {
         background: @blue-7;
         border-color: @blue-4;
 
@@ -99,6 +93,19 @@ display: none;
     }
 }
 
+@media all and (max-width: 50em) {
+    .columbia-special-userlogin {
+        .mt-content-container {
+            flex-direction: column;
+        }
+
+        .mt-login-skin-template,
+        #SpecialUserlogin {
+            max-width: 100%;
+        }
+    }
+}
+
 /*I.E. Login Fix*/
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 
@@ -113,7 +120,8 @@ padding-bottom: 5px;
 }
 }
 
-/*Hide file attachments from search results.*/
-#mt-search-results li.type-file {
+/*Hide file attachments and classification filters from search results.*/
+.mt-search-filters-option-attachments,
+.mt-search-filters-option-classifications {
     display: none;
 }

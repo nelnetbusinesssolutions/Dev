@@ -367,8 +367,6 @@ img.menu.badger {
 
 #tz-menu {
     position: fixed;
-    display: flex;
-    justify-content: space-between;
     z-index: 10000;
     top: -1em;
     width: 325px;
@@ -386,10 +384,11 @@ img.menu.badger {
     #expander {
         height: 110px;
         padding: 10px 5px;
+        margin-left: -1px;
         cursor: pointer;
         background: #c2c2c2;
         position: absolute;
-        left: 99.5%;
+        left: 100%;
         bottom: 50%;
         -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
@@ -398,6 +397,10 @@ img.menu.badger {
         text-align: center;
         border: 1px solid #fff;
         border-left: 0;
+
+        .columbia-browser-safari & {
+            margin-left: -11px;
+        }
     }
 
     &.user-expanded {
@@ -798,26 +801,6 @@ body.columbia-special-firstloginwelcome ol li.elm-global-search {
     float: none;
 }
 
-/* Hide Filters based on Account Type */
-body.elm-user-pro-member .mt-field.mt-classification-filter-section.mt-classification-section-owner,
-body.elm-user-pro-member .mt-field.mt-classification-filter-section.mt-classification-section-stage,
-body.elm-user-pro-member .mt-field.mt-classification-filter-section.mt-classification-section-article {
-    display: none;
-}
-
-body.elm-user-pro-member.columbia-group-pro-admin .mt-field.mt-classification-filter-section.mt-classification-section-owner,
-body.elm-user-pro-member.columbia-group-pro-admin .mt-field.mt-classification-filter-section.mt-classification-section-stage,
-body.elm-user-pro-member.columbia-group-pro-admin .mt-field.mt-classification-filter-section.mt-classification-section-article {
-    display: inline-table;
-}
-
-body.elm-user-community .mt-field.mt-classification-filter-section.mt-classification-section-owner,
-body.elm-user-community .mt-field.mt-classification-filter-section.mt-classification-section-targetaudience,
-body.elm-user-community .mt-field.mt-classification-filter-section.mt-classification-section-stage,
-body.elm-user-community .mt-field.mt-classification-filter-section.mt-classification-section-year {
-    display: none;
-}
-
 /* Hiding Question Mark on Search */
 a.mt-f1-success.mt-f1-link.mt-icon-f1-link.mt-f1-search {
     display: none;
@@ -903,7 +886,8 @@ a.mt-f1-success.mt-f1-link.mt-icon-f1-link.mt-f1-search {
 }
 
 /*****Guide Tabs*****/
-.columbia-article-topic-guide .ui-tabs {
+.columbia-article-topic-guide .ui-tabs,
+.columbia-article-topic .ui-tabs {
     border: none;
 
     .ui-tabs-scroll-container {
@@ -1010,7 +994,9 @@ a.mt-f1-success.mt-f1-link.mt-icon-f1-link.mt-f1-search {
 
 @media all and (min-width: 37.5em) {
   .columbia-article-topic-guide .ui-tabs .ui-tabs-nav li.mt-guide-tab.ui-state-default,
-  .columbia-article-topic-guide .ui-tabs .ui-tabs-nav li.mt-guide-tab.ui-state-active + .mt-guide-tab {
+  .columbia-article-topic .ui-tabs .ui-tabs-nav li.mt-guide-tab.ui-state-default,
+  .columbia-article-topic-guide .ui-tabs .ui-tabs-nav li.mt-guide-tab.ui-state-active + .mt-guide-tab,
+  .columbia-article-topic .ui-tabs .ui-tabs-nav li.mt-guide-tab.ui-state-active + .mt-guide-tab {
     margin: 0 4px;
   }
 }
@@ -1107,8 +1093,8 @@ h4, h5, h6 {
 }
 
 /*Links within Articles*/
-article.elm-content-container section.mt-content-container a,
-div.mt-content-container a {
+article.elm-content-container section.mt-content-container a:not(.mt-menu-item):not(.mt-menu-category),
+div.mt-content-container a:not(.mt-menu-item):not(.mt-menu-category) {
     color: @blue-link;
     font-weight: 800;
 
@@ -1119,6 +1105,14 @@ div.mt-content-container a {
     &.external .mt-icon-newtab,
     &.link-https .mt-icon-newtab {
         margin: auto 4px;
+    }
+
+    &.blue4 {
+        color: @blue-4;
+
+        &:hover {
+            color: @blue-5;
+        }
     }
 }
 
@@ -1134,6 +1128,12 @@ table {
 /*Image Alignment*/
 img {
     vertical-align:text-bottom;
+}
+
+/*Videos*/
+/*Keep videos confined to 100% of the screen width.*/
+.mt-video-widget iframe {
+    max-width: 100%;
 }
 
 /*Last Updated*/
@@ -1414,7 +1414,7 @@ body.elm-user-pro-member .mt-sortable-listing:focus,
 /*****Content Templates*****/
 /* Note, Important, Tip Callouts */
 .note-blank {
-    background-image: url(/@api/deki/files/577/Note_Icon_2019.png?origin=mt-web);
+    background-image: url(/@api/deki/files/404/Note_Icon_2019.png);
     background-color: #fff;
     border: 1px solid @green-5;
 }
@@ -1427,7 +1427,7 @@ body.elm-user-pro-member .mt-sortable-listing:focus,
 }
 
 .tip {
-    background-image: url(/@api/deki/files/8879/Tip_Icon_2019.png?origin=mt-web);
+    background-image: url(/@api/deki/files/606/Tip_Icon_2019.png);
     background-color: #fff;
     border: 1px solid @gray-5;
 }
@@ -1735,8 +1735,21 @@ body.cke_editable .mt-style-conditional hr, .mt-style-conditional hr, .mt-style-
     transition: all .2s ease-in-out;
 }
 
-.columbia-learning-path .elm-meta-article-navigation .elm-back-to-top {
-    display: inline-block;
+.columbia-learning-path,
+.columbia-article-topic-guide,
+.columbia-article-topic-category {
+    .elm-meta-article-navigation {
+        display: block;
+    }
+
+    .elm-meta-article-navigation .elm-back-to-top,
+    #mt-back-to-top {
+        display: inline-block;
+    }
+}
+
+.columbia-article-topic-category .elm-meta-article-navigation {
+    border-bottom: 0;
 }
 
 /*Responsive Mode Back to Top*/
@@ -2255,6 +2268,7 @@ table.blue-rows {
 
     td, th {
         border: 1px solid @gray-8;
+        vertical-align: middle;
     }
 
     th {

@@ -1,4 +1,13 @@
 <script>
+function createVideoReuseButton(videoLink, videoLinkText) {
+    //If video is being used as content reuse
+    if ($('.mt-contentreuse-widget .mt-video-widget').length) {
+        //Add a button at the top of the article
+        $('#section_1').before('<div><a class="hh-btn video-btn" "mt-self-link" href="' + videoLink + '">' + videoLinkText + '</a><br /></div>');
+    }
+}
+</script>
+<script>
 /*Expandable List: Simple */
 $(function() {
     //Expand/Collapse All Button for Expandable List: Simple*/
@@ -149,7 +158,7 @@ $(function() {
         //Styling sign in page
         if ($('.columbia-special-userlogin').length) {
             $('.columbia-special-userlogin .mt-login-skin-template').insertBefore('#SpecialUserlogin');
-            $('.columbia-special-userlogin #widget-login-panel #text-username').after('<p class="login-instructions">Contact the site admin if you do not recall your username.</p>');
+            $('.columbia-special-userlogin #widget-login-panel #text-username').after('<p class="login-instructions">Contact the <a href="mailto:nbsmindtouch@nelnet.net" class="blue4">site admin\<\/\a\> if you do not recall your username.</p>');
             $('.columbia-special-userlogin #widget-login-panel #password-password').after('<p class="login-instructions">Click the Password reset tab if you do not recall your password.</p>');
             $('.columbia-special-userlogin #widget-login-panel #mt-login-form').append('<p class="browsers">Supported browsers: <br />IE 11, IE Edge, Chrome, Firefox, Safari</p>');
         }
@@ -256,7 +265,7 @@ $('.mt-carousel-helper-text').html('Refine results by selecting a filter or ente
 $('<div>Refine results by selecting a filter or changing the search terms.</div>').appendTo('.mt-help-breadcrumb-container.mt-search-breadcrumb-widget');
 
 //Add arrow icon to external links
-$('a[rel="external nofollow"]').append('<span class="mt-icon-newtab"></span>');
+$('.elm-content-container a[rel="external nofollow"]').append('<span class="mt-icon-newtab"></span>');
 });
 
 

@@ -27,3 +27,10 @@ config.stylesSet.push({ name : 'HE and K12 School Users', element : 'div', wrap:
 config.stylesSet.push({name: 'Gray Header Table', element: 'table', attributes: { 'class': 'blue-rows' }});
 config.stylesSet.push({name: 'Lightbox', element: 'img', attributes: { 'class': 'lightbox', title: 'Click to enlarge' }});
 }
+
+CKEDITOR.config.colorButton_colors = '021319,052532,1B2710,2C0F1A,FFC70E,C16187,' +
+'C4D7B2,89AF65,FFFBEC,4D4D4D,333,1A1A1A,' +
+'F9F9F9,F3F3F3,FFFBEC,E8EFE0,EEF3E8,E2E9EC';
+
+CKEDITOR.config.colorButton_enableMore = false;
+CKEDITOR.config.colorButton_enableAutomatic = false;
