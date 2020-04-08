@@ -17,13 +17,21 @@ display: none;
 
     .mt-content-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
     }
 
     .mt-login-skin-template,
     #SpecialUserlogin {
-        max-width: 50%;
+        width: 50%;
+    }
+
+    .widget-panel {
+        min-height: 25em;
+
+        form {
+            margin-top: 0 !important;
+        }
     }
 
     .ui-tabs {
@@ -83,8 +91,7 @@ display: none;
     }
 
     .browsers {
-        order: 5;
-        margin: 0 1em 1.5em;
+        margin: 0 .1em;
         color: @blue-4;
     }
 
@@ -101,7 +108,7 @@ display: none;
 
         .mt-login-skin-template,
         #SpecialUserlogin {
-            max-width: 100%;
+            width: 100%;
         }
     }
 }

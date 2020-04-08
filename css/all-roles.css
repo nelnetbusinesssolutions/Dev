@@ -2259,6 +2259,60 @@ body mt-sortable-listing.mt-sortable-lp-page:hover dd {
 
 /*****Selectable Styles*****/
 
+/*Page Info Table */
+table.page-info {
+    border-left: 24px solid @gray-4;
+    border-top-left-radius: .25em;
+    border-bottom-left-radius: .25em;
+    margin: 1.5em 0;
+
+    th,
+    td,
+    th:hover,
+    td:hover,
+    tr:hover td {
+        background: #fff;
+        border: 1px solid @gray-8;
+        vertical-align: middle;
+        padding: .5em;
+        font-size: 100%;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    .mt-page-summary {
+        margin: 0;
+    }
+
+    @media (max-width: 37.49em) {
+        body:not(.cke_editable) &.mt-responsive-table {
+            th,
+            tr:nth-child(even) td {
+                background: #fff;
+            }
+
+            th {
+                border-bottom: 1px solid @gray-8;
+                border-top: 2px solid @gray-6;
+            }
+
+            tr:first-child th {
+                border-top: 1px solid @gray-8;
+            }
+
+            td {
+                border: 1px solid @gray-8;
+            }
+
+            tr td:last-child {
+                border-bottom: 1px solid @gray-8;
+            }
+        }
+    }
+}
+
 /* Gray Header Table */
 table.blue-rows {
     border: 1px solid @gray-11;

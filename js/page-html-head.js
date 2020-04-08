@@ -158,9 +158,9 @@ $(function() {
         //Styling sign in page
         if ($('.columbia-special-userlogin').length) {
             $('.columbia-special-userlogin .mt-login-skin-template').insertBefore('#SpecialUserlogin');
-            $('.columbia-special-userlogin #widget-login-panel #text-username').after('<p class="login-instructions">Contact the <a href="mailto:nbsmindtouch@nelnet.net" class="blue4">site admin\<\/\a\> if you do not recall your username.</p>');
+            $('.columbia-special-userlogin .input-text').after('<p class="login-instructions">Contact the <a href="mailto:nbsmindtouch@nelnet.net" class="blue4">site admin <span class="mt-icon-newtab">\<\/\s\p\a\n\>\<\/\a\> if you do not recall your username.</p>');
             $('.columbia-special-userlogin #widget-login-panel #password-password').after('<p class="login-instructions">Click the Password reset tab if you do not recall your password.</p>');
-            $('.columbia-special-userlogin #widget-login-panel #mt-login-form').append('<p class="browsers">Supported browsers: <br />IE 11, IE Edge, Chrome, Firefox, Safari</p>');
+            $('.columbia-special-userlogin .widget-panel').append('<p class="browsers">Supported browsers: <br />IE 11, IE Edge, Chrome, Firefox, Safari</p>');
         }
 
         $(".mt-lp-progress-bar li").each(function(i) {

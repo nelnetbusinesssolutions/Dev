@@ -387,6 +387,10 @@ img {
     max-width: 7in;
 }
 
+.inline-img {
+    margin: 0;
+}
+
 /* lists */
 ol ol {
     list-style: lower-alpha;
@@ -589,9 +593,20 @@ dd {
     border-style: solid;
 }
 
-.mt-style-conditional hr, .mt-style-conditional .note-blank, .mt-style-conditional .important{
+.mt-style-conditional hr,
+.mt-style-conditional .note-blank,
+.mt-style-conditional .important,
+.mt-style-conditional .tip {
     border: 1px solid #B74E29!important;
+    color: #b74e29;
     p {color: #B74E29;}
+}
+
+.mt-style-conditional table,
+.mt-style-conditional th,
+.mt-style-conditional td {
+    color: #b74e29 !important;
+    border-color: #b74e29 !important;
 }
 
 /*notes and important notices*/
