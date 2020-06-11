@@ -178,14 +178,14 @@ $(function() {
         if ($('.mt-lp-progress-container').length) {
             var urlParams = new URLSearchParams(window.location.search);
             var lpName = urlParams.get('mt-learningpath');
-            var authUrl = $('.platform').text();
+            // var authUrl = $('.platform').text();
         }
 
         $(".mt-lp-progress-bar").each(function(i) {
             $('.mt-lp-progress-container').insertBefore('h1#title');
             $(".mt-lp-progress-bar").before('<p class="desktop-verb">You are viewing a collection of pages. Click the numbered circles to navigate between pages or click the previous/next article titles.</p>', '<p class="mobile-verb">You are viewing a collection of pages. Click the circles to navigate between pages or click the previous/next article titles.</p>');
             $('.mt-lp-path-meta-data').prependTo('.mt-lp-progress-container');
-            $('.mt-lp-path-meta-data').append('<a class="mt-icon-paperplane" href="mailto:?Subject=Learning%20Path%20Resource&body=' + authUrl + '/@go/path/' + lpName + '">Email path</a>');
+            // $('.mt-lp-path-meta-data').append('<a class="mt-icon-paperplane" href="mailto:?Subject=Learning%20Path%20Resource&body=' + authUrl + '/@go/path/' + lpName + '">Email path</a>');
             $(".mt-lp-path-meta-data .mt-lp-progress-description").html($(".mt-lp-path-meta-data .mt-lp-progress-description").html().replace("step", "page"));
         });
 
@@ -198,7 +198,7 @@ $(function() {
             });
         }
 
-        function checkForLP(mutations, observer) {
+        /*function checkForLP(mutations, observer) {
             observer.disconnect();
             if ($('.mt-lp-pages-container').length) {
                 $('.mt-lp-pages-container').each(function (index, div) {
@@ -219,7 +219,7 @@ $(function() {
                 var observer = new MutationObserver(callback);
                 observer.observe(node, settings);
             }
-        }
+        }*/
 
     });
 </script>
