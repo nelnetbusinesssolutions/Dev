@@ -811,6 +811,11 @@ a.mt-f1-success.mt-f1-link.mt-icon-f1-link.mt-f1-search {
     display: none;
 }
 
+/*Hide Recommended Tag in Search*/
+.recommended-tag {
+    display: none;
+}
+
 /* Search page text */
 #mt-search-container #UserSupport h1.mt-help-header {
     font-size: 2em;
@@ -1444,7 +1449,13 @@ body.elm-user-pro-member .mt-sortable-listing:focus,
     border: 1px solid @gray-5;
 }
 
-.important, .note-blank, .tip {
+.premier-note {
+    background-image: url(/@api/deki/files/1507/50PremierArrows.png);
+    background-color: #fff;
+    border: 1px solid @green-5;
+}
+
+.important, .note-blank, .tip, .premier-note {
     overflow: hidden;
     border-radius: 6px;
     padding: 20px 20px 20px 70px;
@@ -1672,10 +1683,11 @@ dl.expandable-list {
     }
 }
 
-/*Make sure pagination links display in QP dot release article */
+/*Make sure pagination links display in QP dot release article and videos */
 .columbia-article-topic-qpinternadotreleases,
 .columbia-article-topic-qpexternaldotreleases,
-.columbia-article-topic-releasenotes {
+.columbia-article-topic-releasenotes,
+.columbia-article-topic-video {
     .mt-article-pagination,
     .elm-meta-article-navigation {
         display: block !important;

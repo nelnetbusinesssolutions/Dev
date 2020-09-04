@@ -1,3 +1,5 @@
+<script src="https://cdn.jsdelivr.net/npm/shepherd.js@5.0.1/dist/js/shepherd.js"></script>
+
 <script>
 function createVideoReuseButton(videoLink, videoLinkText) {
     //If video is being used as content reuse
@@ -11,7 +13,12 @@ function createVideoReuseButton(videoLink, videoLinkText) {
 /*Expandable List: Simple */
 $(function() {
     //Expand/Collapse All Button for Expandable List: Simple*/
-    $('<div class="expand-button"><a class="toggle-all"></a></div>').insertBefore('dl.expand');
+    $('dl.expand').each(function(i, el) {
+        if ($(el).find('dt.expand').length > 1) {
+            $(el).addClass('pluralexpander');
+        }
+    });
+    $('<div class="expand-button"><a class="toggle-all"></a></div>').insertBefore('dl.expand.pluralexpander');
     $('a.toggle-all').text('Expand/Collapse All');
 
     //On click
@@ -175,28 +182,21 @@ $(function() {
             $(this).closest('li').find('span').toggleClass('j-border');
         });
 
-        if ($('.mt-lp-progress-container').length) {
-            var urlParams = new URLSearchParams(window.location.search);
-            var lpName = urlParams.get('mt-learningpath');
-            // var authUrl = $('.platform').text();
-        }
-
         $(".mt-lp-progress-bar").each(function(i) {
             $('.mt-lp-progress-container').insertBefore('h1#title');
             $(".mt-lp-progress-bar").before('<p class="desktop-verb">You are viewing a collection of pages. Click the numbered circles to navigate between pages or click the previous/next article titles.</p>', '<p class="mobile-verb">You are viewing a collection of pages. Click the circles to navigate between pages or click the previous/next article titles.</p>');
             $('.mt-lp-path-meta-data').prependTo('.mt-lp-progress-container');
-            // $('.mt-lp-path-meta-data').append('<a class="mt-icon-paperplane" href="mailto:?Subject=Learning%20Path%20Resource&body=' + authUrl + '/@go/path/' + lpName + '">Email path</a>');
             $(".mt-lp-path-meta-data .mt-lp-progress-description").html($(".mt-lp-path-meta-data .mt-lp-progress-description").html().replace("step", "page"));
         });
 
-        if ($('.mt-guide-tabs-container').length) {
-            $('li.mt-guide-tab').click(function (tab) {
-                createMutationObserver(checkForLP, $('.mt-guide-tabs-container')[0], {
-                    childList: true,
-                    subtree: true
-                });
-            });
-        }
+        //if ($('.mt-guide-tabs-container').length) {
+          //  $('li.mt-guide-tab').click(function (tab) {
+            //    createMutationObserver(checkForLP, $('.mt-guide-tabs-container')[0], {
+              //      childList: true,
+                //    subtree: true
+//                });
+  //          });
+    //    }
 
         /*function checkForLP(mutations, observer) {
             observer.disconnect();
@@ -229,7 +229,12 @@ $(function() {
     /*** Expandable List Expand/Collapse All Button ***/
     $(document).ready(function() {
         //Create the button before each list
-        $('<div class="expand-button"><a class="toggle-all"></a></div>').insertBefore('dl.expandable-list');
+        $('dl.expandable-list').each(function(i, el) {
+            if ($(el).find('dt').length > 1) {
+                $(el).addClass('pluralexpander');
+            }
+        });
+        $('<div class="expand-button"><a class="toggle-all"></a></div>').insertBefore('dl.expandable-list.pluralexpander');
         $('a.toggle-all').text('Expand/Collapse All');
 
         //On click

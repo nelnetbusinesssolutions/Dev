@@ -2,16 +2,16 @@
 <script>
     $(document).ready(function() {
         //Remove Previous Cookie Here
-        $.removeCookie('nov-cookie', {
+        $.removeCookie('tztest-cookie', {
             expires: 365,
             path: '/',
             domain: 'nelnet-dev.mindtouch.us'
         });
 
-        $(".header-links #whats-new").click(function() {
+        $(".header-links #whats-new, #tz-menu #nav-new").click(function() {
             $(".cookie-message, img.badger, img.menu-badger").css("display", "none");
             //Add New Cookie Here
-            $.cookie('newtest-cookie', true, {
+            $.cookie('tztest3-cookie', true, {
                 expires: 365,
                 path: '/',
                 domain: 'nelnet-dev.mindtouch.us'
@@ -20,7 +20,7 @@
 
         $(function() {
             //Add New Cookie Here Too
-            if (!$.cookie('newtest-cookie')) {
+            if (!$.cookie('tztest3-cookie')) {
                 $(".cookie-message, img.menu-badger").css("display", "block");
                 $("img.badger").css("display", "inline-block");
             }

@@ -596,7 +596,8 @@ dd {
 .mt-style-conditional hr,
 .mt-style-conditional .note-blank,
 .mt-style-conditional .important,
-.mt-style-conditional .tip {
+.mt-style-conditional .tip,
+.mt-style-conditional .premier-note {
     border: 1px solid #B74E29!important;
     color: #b74e29;
     p {color: #B74E29;}
@@ -623,6 +624,10 @@ dd {
     background-image: url(/@api/deki/files/606/Tip_icon.png?origin=mt-web);
 }
 
+.premier-note {
+    background-image: url(/@api/deki/files/1507/50PremierArrows.png);
+}
+
 .important {
     overflow: hidden;
     padding: 20px 20px 20px 80px;
@@ -638,7 +643,7 @@ dd {
 }
 
 
-.note-blank, .tip {
+.note-blank, .tip, .premier-note {
     overflow: hidden;
     padding: 20px 20px 20px 80px;
     border-radius: 6px;
@@ -653,7 +658,7 @@ dd {
     border: 1px solid #8A8C8E;
 }
 
-.note-blank {
+.note-blank, .premier-note {
     border: 1px solid #89af65;
 }
 
