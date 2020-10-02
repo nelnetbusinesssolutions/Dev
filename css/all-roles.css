@@ -2415,6 +2415,163 @@ table.blue-rows {
 }
 /* End Selectable Styles */
 
+/*****Shepherd Walkthroughs*****/
+.shepherd {
+    z-index: 200000 !important;
+
+    .shepherd-element:focus,
+    .shepherd-content:focus {
+        outline: 0;
+    }
+
+    .shepherd-element {
+        .shepherd-content {
+            & > :first-child {
+                border-radius: 5px 5px 0 0;
+            }
+
+            & > :last-child {
+                border-radius: 0 0 5px 5px;
+            }
+
+            .shepherd-header {
+                background: @green-2 !important;
+                display: flex;
+                justify-content: space-between;
+                padding: 0 1em 0 .5em !important;
+
+                h3 {
+                    color: #fff;
+                    margin: .5em .5em .25em;
+                }
+
+                .shepherd-cancel-icon,
+                .shepherd-cancel-icon:hover{
+                    color: #fff !important;
+                    background: transparent;
+                    box-shadow: none;
+                    border: 0;
+                    font-size: 200%;
+                    padding: 0;
+                }
+            }
+
+            .shepherd-text {
+                background: @gray-8;
+                text-align: left;
+
+                a, a:visited {
+                    color: @blue-5;
+                }
+            }
+
+            .shepherd-text,
+            .shepherd-footer {
+                padding: .5em;
+            }
+
+            .shepherd-footer {
+                background: @gray-8;
+
+                button {
+                    background: @pink-3;
+                    color: #fff;
+                    border: 0;
+                }
+
+                button.shepherd-button-secondary {
+                    background: transparent;
+                    color: #000;
+                }
+
+                .shepherd-button:hover {
+                    background: @pink-2;
+                    color: #fff;
+                    border: 0;
+                    box-shadow: none;
+                }
+            }
+        }
+
+        &.shepherd-warning .mt-icon-warning2:before {
+            color: @yellow-4;
+            font-size: 1.5em;
+            vertical-align: middle;
+            margin-left: .25em;
+        }
+    }
+
+    &[x-placement='bottom'] .tippy-arrow {
+        border-bottom-color: @green-2 !important;
+    }
+
+    &[x-placement='top'] .tippy-arrow {
+        border-top-color: @gray-8 !important;
+    }
+
+    &[x-placement='left'] .tippy-arrow,
+    &[x-placement='left-start'] .tippy-arrow{
+        border-left-color: @gray-8 !important;
+    }
+
+    &[x-placement='right'] .tippy-arrow,
+    &[x-placement='right-end'] .tippy-arrow {
+        border-right-color: @gray-8 !important;
+    }
+
+    &[x-placement='right-start'] .tippy-arrow {
+        border-right-color: @green-2 !important;
+    }
+
+    &[x-placement='left-start'] .tippy-arrow {
+        border-left-color: @green-2 !important;
+    }
+}
+
+/*Sheperd Resource Center*/
+#editor-rc-badge {
+    cursor: pointer;
+}
+
+.editor-rc {
+    .shepherd-text {
+        button {
+            display: block;
+            background: @pink-3;
+            color: #fff;
+            margin: 1em auto;
+            width: 100%;
+            border: 0;
+        }
+
+        button:hover {
+            background: @pink-2;
+            color: #fff;
+            border: 0;
+            box-shadow: none;
+        }
+    }
+}
+
+/*Adding Editor help badge*/
+.page-mode-editor .mt-notice-controls {
+    display: block !important;
+
+    li {
+        display: none !important;
+    }
+
+    li:last-child {
+        display: inline-block !important;
+    }
+}
+
+/*Adds info badge to Create draft button on guides*/
+#guide-create-draft-info {
+    margin-left: .25em;
+    cursor: pointer;
+}
+
 /*****Other*****/
 .tool-tip-link {
     background-color: rgb(174, 167, 159);
