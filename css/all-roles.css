@@ -774,6 +774,18 @@ div.span-container {
 }
 
 /*****Search*****/
+/*Styling search results*/
+.columbia-special-search #search-results {
+    a.mt-tracked-result {
+        font-size: 110%;
+    }
+
+    .mt-search-partial-content,
+    .mt-search-full-content {
+        font-weight: 800;
+    }
+}
+
 /*Hide no results text*/
 .type-empty p {
     visibility: hidden;
@@ -2505,6 +2517,11 @@ table.blue-rows {
         border-bottom-color: @green-2 !important;
     }
 
+    &[x-placement='bottom-start'] .tippy-arrow {
+        border-bottom-color: @green-2 !important;
+        left: 6px !important;
+    }
+
     &[x-placement='top'] .tippy-arrow {
         border-top-color: @gray-8 !important;
     }
@@ -2573,6 +2590,20 @@ table.blue-rows {
 }
 
 /*****Other*****/
+/*Hides My preferences, page feedback, and email/copy icons, header links from School Site users*/
+.columbia-group-school-site-api {
+    .mt-user-menu-preferences,
+    .mt-leave-feedback,
+    .mt-feedback-form,
+    .mt-icon-email-share,
+    .mt-icon-copy-share,
+    .header-link-whats-new,
+    .header-link-release-notes {
+        display: none !important;
+    }
+}
+
+
 .tool-tip-link {
     background-color: rgb(174, 167, 159);
     cursor: help;
