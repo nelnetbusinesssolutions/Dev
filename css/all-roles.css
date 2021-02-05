@@ -2024,6 +2024,15 @@ body.elm-user-pro-member.columbia-group-pro-admin .mt-new-features-container {
     display: block;
 }
 
+/* Display icon for renamed editors only style button */
+.cke_button_icon.cke_button__conditional_text_editors_only_icon:before {
+    content: '\e671'
+}
+/*Hide (Pro member) from conditional content block in the editor*/
+.mt-conditionalcontent-widget-title strong {
+    display: none;
+}
+
 /*Editor text revert to default/Editor Fixes*/
 .cke_menubar .cke_menubar_menuitem {
     color: #444 !important;
