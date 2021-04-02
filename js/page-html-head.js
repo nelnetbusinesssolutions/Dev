@@ -1,16 +1,16 @@
 <script src="https://cdn.jsdelivr.net/npm/shepherd.js@5.0.1/dist/js/shepherd.js"></script>
 
 <script>
-function createVideoReuseButton(videoLink, videoLinkText) {
+        function createVideoReuseButton(videoLink, videoLinkText) {
     //If video is being used as content reuse
-    if ($('.mt-contentreuse-widget .mt-video-widget').length) {
+    if ($('.mt-contentreuse-widget .mt-video-widget').length && !$('body.columbia-article-topic-video').length) { 
         //Add a button at the top of the article
         $('#section_1').before('<div><a class="hh-btn video-btn" "mt-self-link" href="' + videoLink + '">' + videoLinkText + '</a><br /></div>');
-    }
+    }   
 }
 </script>
 <script>
-/*Expandable List: Simple */
+        /*Expandable List: Simple */
 $(function() {
     //Expand/Collapse All Button for Expandable List: Simple*/
     $('dl.expand').each(function(i, el) {
@@ -42,13 +42,13 @@ $(function() {
             targetDL.children('.expand dt').next('.expand dd').slideUp();
         };
     });
-
+    
     //Add button around text in each dt. Add aria attributes to button and dd.
     $('.expand dt').each(function(index) {
         $(this).wrapInner( '<button aria-controls="item-' + (index + 1) + '" aria-expanded="false"><span></span></button>' );
         $(this).next('.expand dd').attr('id', 'item-' + (index + 1));
     });
-
+    
     //Add/remove open class on click
     $('.expand dt').click(function(e) {
         e.preventDefault();
@@ -62,13 +62,13 @@ $(function() {
             $(this).next('.expand dd').slideUp();
         };
     });
-
+    
 });
 </script>
 <script>
-/* Expandable List Block Color Functionality */
+        /* Expandable List Block Color Functionality */
 
-    //Wrap the text of each dt in a button and assign aria values
+        //Wrap the text of each dt in a button and assign aria values
     $(document).ready(function() {
         $('.expandable-list dt').each(function(index) {
             $(this).wrapInner( '<button aria-controls="item-' + (index + 1) + '" aria-expanded="false"><span></span></button>' );
@@ -185,7 +185,7 @@ $(function() {
         $(".mt-lp-progress-bar").each(function(i) {
             $('.mt-lp-progress-container').insertBefore('h1#title');
             $(".mt-lp-progress-bar").before('<p class="desktop-verb">You are viewing a collection of pages. Click the numbered circles to navigate between pages or click the previous/next article titles.</p>', '<p class="mobile-verb">You are viewing a collection of pages. Click the circles to navigate between pages or click the previous/next article titles.</p>');
-            $('.mt-lp-path-meta-data').prependTo('.mt-lp-progress-container');
+            $('.mt-lp-path-meta-data').prependTo('.mt-lp-progress-container');            
             $(".mt-lp-path-meta-data .mt-lp-progress-description").html($(".mt-lp-path-meta-data .mt-lp-progress-description").html().replace("step", "page"));
         });
 
@@ -226,7 +226,7 @@ $(function() {
 
 
 <script>
-    /*** Expandable List Expand/Collapse All Button ***/
+                /*** Expandable List Expand/Collapse All Button ***/
     $(document).ready(function() {
         //Create the button before each list
         $('dl.expandable-list').each(function(i, el) {
@@ -269,7 +269,7 @@ $('.mt-carousel-helper-text').html('Refine results by selecting a filter or ente
 
 $('<div>Refine results by selecting a filter or changing the search terms.</div>').appendTo('.mt-help-breadcrumb-container.mt-search-breadcrumb-widget');
 
-//Add arrow icon to external links
+//Add arrow icon to external links    
 $('.elm-content-container a[rel="external nofollow"]').append('<span class="mt-icon-newtab"></span>');
 });
 
@@ -278,7 +278,7 @@ $('.elm-content-container a[rel="external nofollow"]').append('<span class="mt-i
 </script>
 
 <script>
-/*** Creating tooltips for each page settings classification ***/
+                /*** Creating tooltips for each page settings classification ***/
 
 window.addEventListener('DOMContentLoaded', function() {
 if (document.querySelector('#mt-summary')) {
@@ -401,14 +401,14 @@ tooltipMaker(document.querySelector('#live-tag-input-area label'), document.quer
 });
 </script>
 <script>
-/* Checklist Functionality to Retain Checks */
+                /* Checklist Functionality to Retain Checks */
 window.addEventListener('DOMContentLoaded', function() {
     //Selects all checkboxes and puts them in an array
     const boxes = document.querySelectorAll('#todo-list input'),
           boxesArray = Array.prototype.slice.call(boxes),
           //Get the pathname of the URL
           pathname = window.location.pathname;
-
+    
     //Put any stored data into the variable checks
     if (localStorage[pathname]) {
         let checks = JSON.parse(localStorage.getItem(pathname));
@@ -420,7 +420,7 @@ window.addEventListener('DOMContentLoaded', function() {
             boxes[key].setAttribute('checked', val);
         });
     };
-
+    
     //Empty object to collect data
     let boxStatus = {};
     //Iterate through boxesArray
@@ -443,7 +443,7 @@ window.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem(pathname, JSON.stringify(boxStatus));
         });
     });
-
+    
     let resetButton = document.querySelectorAll('.reset-checklist'),
         resetButtonArray = Array.prototype.slice.call(resetButton);
     //Add listener to reset button

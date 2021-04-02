@@ -26,7 +26,7 @@
 form#tz-search {
     width: 60%;
     margin: 0 auto;
-
+    
     select#tz-search-category-selector {
         height: 3em;
         background: @pink-3;
@@ -37,7 +37,7 @@ form#tz-search {
         cursor: pointer;
         -moz-appearance: none;
         -webkit-appearance: none;
-
+        
         option {
             background: #fff;
             color: #000;
@@ -47,12 +47,12 @@ form#tz-search {
             display: none;
         }
     }
-
+    
     div.mt-icon-selector-arrow {
         display: inline-block;
         position: relative;
         width: 25%;
-
+        
         &:after {
             content: '\e8dd';
             color: #fff;
@@ -62,7 +62,7 @@ form#tz-search {
             pointer-events: none;
         }
     }
-
+    
     input#tz-search-input {
         width: 75%;
         height: 3em;
@@ -84,7 +84,7 @@ form#tz-search {
             color: @yellow-4;
         }
     }
-
+    
     button#tz-search-submit {
         position: absolute;
         height: 3em;
@@ -92,7 +92,7 @@ form#tz-search {
         border: 0;
         color: @blue-4;
         right: 21%;
-
+        
         &:hover,
         &:active,
         &:focus {
@@ -106,7 +106,7 @@ form#tz-search {
 @media all and (max-width: 65.25em) {
     form#tz-search {
         width: 70%;
-
+        
         button#tz-search-submit {
             right: 16%;
         }
@@ -116,7 +116,7 @@ form#tz-search {
 @media all and (max-width: 50em) {
     form#tz-search {
         width: 90%;
-
+        
         button#tz-search-submit {
             right: 8%;
         }
@@ -128,7 +128,7 @@ form#tz-search {
         div.mt-icon-selector-arrow {
             width: 35%;
         }
-
+    
         input#tz-search-input {
             width: 65%;
         }
@@ -238,7 +238,7 @@ body.elm-user-pro-member.columbia-group-pro-draft li.mt-page-options {
     }
 
     /* Menu and Helpful Links buttons */
-    .header-btn {
+    .header-btn {        
         z-index: 1000;
         background: transparent;
         border: none;
@@ -1109,6 +1109,14 @@ h4, h5, h6 {
     }
 }
 
+.mt-conditionalcontent-widget[data-cke-widget-data*="user.seated"]  { /*Pro Member Conditional Text box color*/
+    background: @pink-8;
+}
+
+.mt-conditionalcontent-widget[data-cke-widget-data*="NBS%20Viewer"][data-cke-widget-data*="PRO%20Editor"] { /*Internal User Conditional Text box color */
+    background: @gray-8;
+}
+
 /*Links within Articles*/
 article.elm-content-container section.mt-content-container a:not(.mt-menu-item):not(.mt-menu-category),
 div.mt-content-container a:not(.mt-menu-item):not(.mt-menu-category) {
@@ -1200,10 +1208,10 @@ img {
 /*Hide Last Modified Date on Topics and Categories for Non-Admin*/
 body.elm-user-pro-member.columbia-article-topic-guide li.elm-last-modified,
 body.elm-user-pro-member.columbia-article-topic-category li.elm-last-modified,
-body.columbia-group-school-users.columbia-article-topic-guide li.elm-last-modified,
-body.columbia-group-school-users.columbia-article-topic-guide li.elm-page-restriction,
-body.columbia-group-school-users.columbia-article-topic-category li.elm-last-modified,
-body.columbia-group-school-users.columbia-article-topic-category li.elm-page-restriction {
+body.elm-user-community.columbia-article-topic-guide li.elm-last-modified,
+body.elm-user-community.columbia-article-topic-guide li.elm-page-restriction,
+body.elm-user-community.columbia-article-topic-category li.elm-last-modified,
+body.elm-user-community.columbia-article-topic-category li.elm-page-restriction {
     display: none;
 }
 
@@ -1775,7 +1783,7 @@ body.cke_editable .mt-style-conditional hr, .mt-style-conditional hr, .mt-style-
 .columbia-article-topic-guide,
 .columbia-article-topic-category {
     .elm-meta-article-navigation {
-        display: block;
+        display: block;        
     }
 
     .elm-meta-article-navigation .elm-back-to-top,
@@ -1973,6 +1981,76 @@ footer.elm-footer nav.elm-footer-siteinfo-nav.elm-nav ol li.elm-footer-powered-b
     }
 }
 
+/* Account Management Phone and Email Module */
+aside#contact-support {
+    max-width: 90%;
+    position: fixed;
+    top: 25%;
+    right: -5px;
+    z-index: 9999;
+    display: flex;
+    overflow-wrap: anywhere;
+
+    .columbia-browser-msie11 & {
+        word-wrap: break-word;
+    }
+
+    button.mt-icon-phone {
+        color: #fff;
+        padding: .5em 1em;
+        border: 1px solid #fff;
+        border-right: 0;
+        border-radius: .25em 0 0 .25em;
+        background: @gray-2;
+        box-shadow: @gray-2 2px 2px 5px;
+        height: 3em;
+
+        &:before {
+            position: absolute;
+            top: 1.1em;
+            left: .7em;
+            font-size: 105%;
+        }
+    }
+
+    span.mt-icon-mail5::before {
+        position: relative;
+        bottom: .25em;
+        left: .25em;
+    }
+
+    .no-touch & button.mt-icon-phone:hover,
+    .no-touch & button.mt-icon-phone:focus {
+        background: @gray-1;
+    }
+
+    .contact-info {
+        background: #fff;
+        padding: .5em;
+        box-shadow: @gray-2 2px 2px 5px;
+        border-radius: 0 0 0 .25em;
+        width: 255px;
+        margin: 0;
+        transition: margin 500ms;
+
+        &.hidden {
+            margin-right: -266px;
+        }
+    }
+
+    .contact-support-desc {
+        font-weight: bold;
+        font-size: 110%;
+        color: @blue-4;
+        margin-top: .4em;
+    }
+
+    .contact-info-icon:before {
+        color: @blue-4;
+        margin-right: .25em;
+    }
+}
+
 /*****Admin and Author Tools*****/
 /* Correct live notice and broken link warning link color */
 .elm-live-notice,
@@ -1980,7 +2058,7 @@ footer.elm-footer nav.elm-footer-siteinfo-nav.elm-nav ol li.elm-footer-powered-b
     a, a:visited, a:active {
         color: @blue-5;
     }
-
+    
     .no-touch & a:hover, a:focus {
         color: @blue-6;
     }
@@ -2054,7 +2132,7 @@ article.elm-content-container section.mt-content-container .mt-empty-listings-me
     &:active,
     &:focus,
     &:visited {
-        color: @blue-5;
+        color: @blue-5;        
     }
 
     .no-touch &:hover {
@@ -2311,7 +2389,7 @@ table.page-info {
     border-bottom-left-radius: .25em;
     margin: 1.5em 0;
 
-    th,
+    th, 
     td,
     th:hover,
     td:hover,
@@ -2444,7 +2522,7 @@ table.blue-rows {
     .shepherd-content:focus {
         outline: 0;
     }
-
+    
     .shepherd-element {
         .shepherd-content {
             & > :first-child {
@@ -2454,13 +2532,13 @@ table.blue-rows {
             & > :last-child {
                 border-radius: 0 0 5px 5px;
             }
-
+            
             .shepherd-header {
                 background: @green-2 !important;
                 display: flex;
                 justify-content: space-between;
                 padding: 0 1em 0 .5em !important;
-
+                
                 h3 {
                     color: #fff;
                     margin: .5em .5em .25em;
@@ -2476,7 +2554,7 @@ table.blue-rows {
                     padding: 0;
                 }
             }
-
+                        
             .shepherd-text {
                 background: @gray-8;
                 text-align: left;
@@ -2521,7 +2599,7 @@ table.blue-rows {
             margin-left: .25em;
         }
     }
-
+    
     &[x-placement='bottom'] .tippy-arrow {
         border-bottom-color: @green-2 !important;
     }
@@ -2530,25 +2608,25 @@ table.blue-rows {
         border-bottom-color: @green-2 !important;
         left: 6px !important;
     }
-
+    
     &[x-placement='top'] .tippy-arrow {
         border-top-color: @gray-8 !important;
     }
-
+    
     &[x-placement='left'] .tippy-arrow,
     &[x-placement='left-start'] .tippy-arrow{
         border-left-color: @gray-8 !important;
     }
-
+    
     &[x-placement='right'] .tippy-arrow,
     &[x-placement='right-end'] .tippy-arrow {
         border-right-color: @gray-8 !important;
     }
-
+    
     &[x-placement='right-start'] .tippy-arrow {
         border-right-color: @green-2 !important;
     }
-
+    
     &[x-placement='left-start'] .tippy-arrow {
         border-left-color: @green-2 !important;
     }

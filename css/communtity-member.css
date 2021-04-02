@@ -1,45 +1,45 @@
 .elm-meta-bottom {
-     display: none;
+    display: none;
 }
 
 /* Removes Stage, Owner, and Target Audience classification from search page */
 .mt-classification-section-stage, .mt-classification-section-owner, .mt-classification-section-targetaudience{
-    display: none;
+   display: none;
 }
 
 @media screen and (min-width: 50em) {
-    .mt-classification-filter .mt-field {
-        width: 33.33%;
-    }
+   .mt-classification-filter .mt-field {
+       width: 33.33%;
+   }
 }
 
 /*hides the cog icon for user preferences*/
 /*a.mt-icon-user-preferences {
-    Display: none !important;
+   Display: none !important;
 }*/
 
 section#attachments {
-    display: none;
+   display: none;
 }
 
 /* Hides attachments for pro-viewers*/
 body.elm-user-pro-member.columbia-group-pro-viewer .elm-attachments .a.mt-icon-page-options.mt-dropdown-link, body.elm-user-pro-member.columbia-group-pro-viewer .elm-attachments a.mt-icon-site-tools.mt-dropdown-link{
-    display: none;
+   display: none;
 }
 
 
 
 .mt-classification-filter-container.mt-search-classification-widget {
-    display: none;
+   display: none;
 }
 
 
 nav.elm-header-user-nav.elm-nav {
-    display: block;
+   display: block;
 }
 
 /*Hide file attachments and classification filters from search results.*/
 .mt-search-filters-option-attachments,
 .mt-search-filters-option-classifications {
-    display: none;
+   display: none;
 }

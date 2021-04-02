@@ -593,8 +593,8 @@ dd {
     border-style: solid;
 }
 
-.mt-style-conditional hr,
-.mt-style-conditional .note-blank,
+.mt-style-conditional hr, 
+.mt-style-conditional .note-blank, 
 .mt-style-conditional .important,
 .mt-style-conditional .tip,
 .mt-style-conditional .premier-note {
@@ -659,7 +659,7 @@ dd {
 }
 
 .note-blank, .premier-note {
-    border: 1px solid #89af65;
+    border: 1px solid #89af65; 
 }
 
 ul.checkbox-list li:before
