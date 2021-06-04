@@ -1475,7 +1475,13 @@ body.elm-user-pro-member .mt-sortable-listing:focus,
     border: 1px solid @green-5;
 }
 
-.important, .note-blank, .tip, .premier-note {
+.note-troubleshooting {
+    background-image: url(/@api/deki/files/1521/troubleshooting_icon.png);
+    background-color: #fff;
+    border: 1px solid @green-5;
+}
+
+.important, .note-blank, .tip, .premier-note, .note-troubleshooting {
     overflow: hidden;
     border-radius: 6px;
     padding: 20px 20px 20px 70px;
@@ -1893,6 +1899,11 @@ footer.elm-footer .nbs-footer .logos {
         max-width: 120px;
         padding-left: 15px;
         padding-right: 15px;
+        vertical-align: middle;
+    }
+
+    img[alt="Campus Commerce"] {
+        max-width: 150px;
     }
 }
 
