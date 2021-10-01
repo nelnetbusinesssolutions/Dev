@@ -453,6 +453,9 @@ img.menu.badger {
 
             & > .link-span a {
                 color: #000;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 115%;
             }
         }
 
@@ -1086,10 +1089,10 @@ blockquote {
     h5, h6 {
         color: @pink-3;
     }
+}
 
-    .mt-content-container ol ol {
-        list-style: lower-alpha;
-    }
+.mt-content-container ol ol {
+    list-style: lower-alpha;
 }
 
 h6 {
@@ -1643,7 +1646,7 @@ dl.expandable-list {
     button {
         background: @blue-9;
         display: flex;
-        align-items: baseline;
+        align-items: center;
 
         &:hover {
             background: inherit;
@@ -1651,8 +1654,6 @@ dl.expandable-list {
 
         &:before {
             font: 400 175%/1 icomoon;
-            position: relative;
-            top: .2em;
             padding-right: 5px;
             content: '\e893';
             display: inline-block;

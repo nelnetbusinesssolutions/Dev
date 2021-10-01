@@ -1,6 +1,6 @@
 <script src="https://rawgit.com/carhartl/jquery-cookie/master/src/jquery.cookie.js"></script>
 <script>
-        $(document).ready(function() {
+    $(document).ready(function() {
         //Remove Previous Cookie Here
         $.removeCookie('tztest4-cookie', {
             expires: 365,
@@ -29,7 +29,7 @@
 </script>
 
 <script>
-        $(document).ready(function() {
+    $(document).ready(function() {
         $('<div class="mt-carousel-helper-text refine">Refine results by selecting a filter or changing the search terms.</p>').insertAfter('.mt-help-breadcrumb-container');
     });
 </script>

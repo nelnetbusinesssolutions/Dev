@@ -121,3 +121,25 @@ select.mt-select-box {
 .class-tooltip-hidden {
     display: none;
 }
+
+/*Hide Edit and Create Draft buttons on Guides and Categories*/
+
+.elm-user-pro-member.columbia-article-topic-category,
+.elm-user-pro-member.columbia-article-topic-guide {
+    .mt-edit-page, 
+    #mt-drafts-create-button, 
+    #guide-create-draft-info,
+    .mt-icon-eye {
+        display: none;
+    }
+
+    &.columbia-group-pro-admin,
+    &.columbia-group-stic {
+        .mt-edit-page, 
+        #mt-drafts-create-button, 
+        #guide-create-draft-info,
+        .mt-icon-eye {
+            display: inline-block;
+        }
+    }
+}
