@@ -753,11 +753,13 @@ div.span-container {
     margin-left: 0;
 
     li {
+        color: #fff;
+
         a:hover {
             font-weight: bold;
         }
 
-        &:after {
+        &:after, span {
             color: #fff;
         }
     }
@@ -1021,7 +1023,7 @@ a.mt-f1-success.mt-f1-link.mt-icon-f1-link.mt-f1-search {
   }
 }
 
-/*Collapse Path Settings on guides with Learning Paths*/
+/*Collapse Path Settings on guides with Learning Paths and Collapse Classification Settings on guides with Classification tab*/
 .noindex .mt-guide-tab-settings.mt-toggle-container button.mt-toggle.mt-toggle-collapse:before {
     content: '\e893';
 }
@@ -1030,21 +1032,23 @@ a.mt-f1-success.mt-f1-link.mt-icon-f1-link.mt-f1-search {
     content: '\e892';
 }
 
-.noindex .mt-guide-tab-settings.mt-guide-tab-settings.mt-toggle-container fieldset.mt-fieldset.mt-collapsible-section.mt-show {
-    display: none;
-}
-
-/*Collapse Classification Settings on guides with Classification tab*/
-fieldset#mt-classification-settings {
-    display: none;
-}
-
 .mt-guide-tab-settings.mt-toggle-container.mt-guide-tabs-settings-area .mt-toggle-expand:before {
     content: '\e892';
 }
 
 .mt-guide-tab-settings.mt-toggle-container.mt-guide-tabs-settings-area .mt-toggle-collapse:before {
     content: '\e893';
+}
+
+.mt-guide-tab-settings button.mt-toggle.mt-summary-toggle.mt-toggle-collapse + fieldset.mt-show {
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+.mt-guide-tab-settings button.mt-toggle.mt-summary-toggle.mt-toggle-expand + fieldset.mt-show {
+    max-height: 2000px !important;
 }
 
 /* Update glyph code for article icon */
@@ -1130,7 +1134,7 @@ div.mt-content-container a:not(.mt-menu-item):not(.mt-menu-category) {
         color: @blue-4;
     }
 
-    &.external .mt-icon-newtab,
+    &[rel*="external"] .mt-icon-newtab,
     &.link-https .mt-icon-newtab {
         margin: auto 4px;
     }
@@ -1418,11 +1422,24 @@ body.elm-user-pro-member .mt-sortable-listing:focus,
 /*****TOC*****/
 #elm-main-content aside#mt-toc-container {
     border: 2px solid @green-3;
+    /*background: none;
+    padding: 0;*/
     background: @green-3;
 
     button,
     .no-touch & button:hover {
         color: #fff;
+        /*padding: .5rem .75em;
+        width: 100%;
+
+        &.mt-toggle-expand {
+            background: @green-3;
+        }
+
+        &.mt-toggle-collapse {
+            color: @green-3;
+            padding-bottom: 0;
+        }*/
     }
 
     &.hh-collapsed {
@@ -2849,3 +2866,15 @@ table.blue-rows {
 @gray-9: #ececec;
 @gray-10: #f3f3f3;
 @gray-11: #f9f9f9;
+
+
+
+
+/*MT Test*/
+/*#mt-toc-container[data-collapsed="false"] {
+        background: #fff!important;
+        button,
+        .no-touch & button:hover {
+            color: @green-3;
+        }
+    }*/
