@@ -1052,7 +1052,8 @@ a.mt-f1-success.mt-f1-link.mt-icon-f1-link.mt-f1-search {
 }
 
 /* Update glyph code for article icon */
-.mt-icon-article-topic-video:before {
+.mt-icon-article-topic-video:before,
+.mt-icon-article-video:before {
     content: '\e8b0';
 }
 
@@ -1097,6 +1098,16 @@ blockquote {
 
 .mt-content-container ol ol {
     list-style: lower-alpha;
+}
+
+.mt-content-container {
+    table,
+    .expandable-list dd,
+    .expand dd {
+        ol, ul {
+            margin: 0;
+        }
+    }
 }
 
 h6 {
@@ -1422,34 +1433,23 @@ body.elm-user-pro-member .mt-sortable-listing:focus,
 /*****TOC*****/
 #elm-main-content aside#mt-toc-container {
     border: 2px solid @green-3;
-    /*background: none;
-    padding: 0;*/
-    background: @green-3;
+    /*background: @green-3;*/
+    background: #fff;
 
     button,
     .no-touch & button:hover {
-        color: #fff;
-        /*padding: .5rem .75em;
-        width: 100%;
-
-        &.mt-toggle-expand {
-            background: @green-3;
-        }
-
-        &.mt-toggle-collapse {
-            color: @green-3;
-            padding-bottom: 0;
-        }*/
+        /*color: #fff;*/
+        color: @green-3;
     }
 
-    &.hh-collapsed {
+   /* &.hh-collapsed {
         background: #fff;
 
         button,
         .no-touch & button:hover {
             color: @green-3;
         }
-    }
+    }*/
 
     /*Display TOC on release notes pages*/
     .columbia-article-topic-releasenotes & {
@@ -1510,6 +1510,10 @@ body.elm-user-pro-member .mt-sortable-listing:focus,
     background-position: 20px 20px !important;
     background-size: 35px;
     min-height: 30px;
+
+    p, ul, ol {
+        margin: 0
+    }
 }
 
 /* HubHelp Button Template */
@@ -2871,10 +2875,3 @@ table.blue-rows {
 
 
 /*MT Test*/
-/*#mt-toc-container[data-collapsed="false"] {
-        background: #fff!important;
-        button,
-        .no-touch & button:hover {
-            color: @green-3;
-        }
-    }*/

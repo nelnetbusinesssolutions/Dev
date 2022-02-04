@@ -659,6 +659,13 @@ dd {
     min-height: 30px;
 }
 
+.note-blank p, .note-blank ul, .note-blank ol,
+.tip p, .tip ul, .tip ol,
+.premier-note p, .premier-note ul, .premier-note ol,
+.note-troubleshooting p, .note-troubleshooting ul, .note-troubleshooting ol {
+    margin: 0px;    
+}
+
 .tip {
     border: 1px solid #8A8C8E;
 }
