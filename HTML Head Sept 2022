@@ -75,6 +75,7 @@ $(function() {
             $(this).wrapInner( '<button aria-controls="item-' + (index + 1) + '" aria-expanded="false"><span></span></button>' );
             $(this).next('.expandable-list dd').attr('id', 'item-' + (index + 1));
         });
+})
 
     $(document).ready(function() {
         $('.expandable-list dt').click(function(e) {
@@ -212,9 +213,9 @@ console.log('this shouldnt appear');
                 var observer = new MutationObserver(callback);
                 observer.observe(node, settings);
             }
-        }
+        }*/
 
-    });*/
+    });
 
 /*$(document).ready(function(){
 if ($('aside#mt-toc-container button').hasClass('mt-toggle-collapse')) {
