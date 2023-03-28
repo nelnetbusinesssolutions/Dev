@@ -1,0 +1,106 @@
+/* Changes the colors for the search bar */
+.elm-user-pro-member .mt-quick-search-container .mt-search {
+    background: #fff;
+}
+
+.elm-user-pro-member .mt-quick-search-container .mt-search {
+    color: #000;
+}
+
+.elm-user-pro-member .mt-quick-search-container .mt-button {
+    color: #999;
+}
+
+/*Tree styling for modals (move page, add page to path, add image etc.)*/
+.mt-tree-node .fancytree-node {
+    &,
+    &.fancytree-active,
+    &.fancytree-focused,
+    &.fancytree-selected {
+        span {
+            color: @gray-4;
+        }
+    }
+
+    .no-touch &:hover,
+    .no-touch &:hover span {
+        color: @yellow-2;
+    }
+}
+
+/*Page Classification Drop-Down Colors*/
+select.mt-select-box {
+    color: @gray-4;
+
+    & + .mt-select-box-arrow:after {
+        color: @gray-4;
+    }
+
+    &:focus,
+    &:active,
+    .no-touch &:hover {
+        color: @gray-4;
+
+        & + .mt-select-box-arrow:after {
+            color: @gray-4;
+        }
+    }
+}
+
+/*** Styles for Page Settings Classification Tooltips ***/
+#live-tags-custom .mt-icon-question2, #live-tag-input-area .mt-icon-question2, .mt-overview-container .mt-icon-question2 {
+    float: left;
+    margin-right: 3px;
+}
+
+#live-tags-custom .mt-icon-question2:hover:before, #live-tag-input-area .mt-icon-question2:hover:before, .mt-overview-container .mt-icon-question2:hover:before {
+    color: @blue-6;
+}
+
+.live-tag-special-section, #live-tag-normal-tags {
+    position: relative;
+}
+
+.class-tooltip {
+    display: block;
+    position: absolute;
+    bottom: 4.5rem;
+    background: #B13A69;
+    color: #fff;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+#live-tag-normal-tags .class-tooltip {
+    top: -1.7rem;
+    bottom: auto;
+}
+
+.mt-overview-container .class-tooltip {
+    top: 2rem;
+    bottom: auto;
+}
+
+@media all and (min-width: 50em) {
+    .class-tooltip {
+        bottom: 4.7rem;
+    }
+
+    #live-tag-normal-tags .class-tooltip, .mt-overview-container .class-tooltip {
+        bottom: auto;
+    }
+}
+
+@media all and (min-width: 80em) {
+    .class-tooltip {
+        bottom: 5.1rem;
+    }
+
+    #live-tag-normal-tags .class-tooltip, .mt-overview-container .class-tooltip {
+        bottom: auto;
+    }
+}
+
+.class-tooltip-hidden {
+    display: none;
+}

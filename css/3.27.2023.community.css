@@ -1,0 +1,36 @@
+.elm-meta-bottom {
+     display: none;
+}
+
+/* Removes Stage, Owner, and Target Audience classification from search page */
+.mt-classification-section-stage, .mt-classification-section-owner, .mt-classification-section-audience, .mt-classification-section-year{
+    display: none;
+}
+
+@media screen and (min-width: 50em)
+{
+.mt-classification-filter .mt-field {
+    width: 33.33%;
+}
+}
+
+/*hides the cog icon for user preferences*/
+/*a.mt-icon-user-preferences {
+    Display: none !important;
+}*/
+
+/*Displays Blue Nav Bar*/
+nav.elm-header-user-nav.elm-nav {
+    display: block;
+}
+
+.mt-classification-filter-container.mt-search-classification-widget {
+    display: none;
+}
+
+/*Hide file attachments from search results.*/
+
+.mt-search-filters-option-attachments,
+.mt-search-filters-option-classifications {
+    display: none;
+}

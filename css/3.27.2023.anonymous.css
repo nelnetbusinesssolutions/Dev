@@ -1,0 +1,137 @@
+/*Removes search bar from login screen */
+.elm-header-user-nav {
+display: none;
+}
+
+/*Removes header links from login screen*/
+.elm-nav.header-links {
+    display: none;
+}
+
+/* Split screen left/right*/
+.columbia-special-userlogin {
+    h1#title {
+        display: none;
+    }
+
+    .mt-content-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .mt-login-skin-template,
+    #SpecialUserlogin {
+        width: 50%;
+    }
+
+    .widget-panel {
+        min-height: 25em;
+
+        form {
+            margin-top: 0 !important;
+        }
+    }
+
+    .ui-tabs {
+        border: 0;
+    }
+
+    .ui-tabs-nav {
+        background: none;
+    }
+
+    .ui-tabs.mt-tabs .ui-tabs-nav li.ui-state-default {
+        background: @blue-4;
+
+        a {
+            color: #fff;
+        }
+
+        &:hover {
+            background: @blue-7;
+            border-color: @blue-4;
+
+            a {
+                color: @blue-4;
+            }
+        }
+    }
+
+    .ui-tabs-panel {
+        border: 1px solid @blue-4;
+        border-top: 0;
+        background: @blue-7;
+
+        button {
+            background: @yellow-4;
+            color: @blue-4;
+            font-weight: bold;
+            border: 1px solid @blue-4;
+        }
+    }
+
+    .ui-tabs.mt-tabs .ui-tabs-nav li.ui-state-active {
+        background: @blue-7;
+        border-color: @blue-4;
+
+        &:hover {
+            background: @blue-7;
+        }
+
+        a {
+            color: @blue-4;
+        }
+    }
+
+    .login-instructions {
+        font-size: 90%;
+        margin: 0;
+    }
+
+    .browsers {
+        margin: 1em .1em;
+        color: @blue-4;
+    }
+
+    label {
+        color: @blue-4;
+    }
+}
+
+@media all and (max-width: 50em) {
+    .columbia-special-userlogin {
+        .mt-content-container {
+            flex-direction: column;
+        }
+
+        .mt-login-skin-template,
+        #SpecialUserlogin {
+            width: 100%;
+        }
+    }
+        .widget-panel .signin-help .signin-list {
+        margin-top: 2.9em;
+        position: relative;
+    }    
+}
+
+/*I.E. Login Fix*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+body.columbia-special-userlogin footer.elm-footer {
+position: relative;
+top: 15vh;
+padding-bottom: 1.5em;
+}
+footer.elm-footer .nbs-footer .copyright-info p {
+margin-bottom: 0;
+padding-bottom: 5px;
+}
+}
+
+/*Hide file attachments from search results.*/
+.mt-search-filters-option-attachments,
+.mt-search-filters-option-classifications {
+    display: none;
+}
